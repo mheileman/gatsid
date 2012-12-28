@@ -241,9 +241,13 @@
   \titlespacing*{\paragraph}{0pt}{*0}{*1.25}
 
 \makeatletter
+%\newcommand{\heading}[1]{%
+%  \noindent\textsc{\color{BlueSteel}\large\sf\bfseries{#1\newline\vspace{-0.25in}}}%
+%  \@afterindentfalse\@afterheading}
+% Changed so we don't need to insert a blank line after each heading - ccl
 \newcommand{\heading}[1]{%
-  \noindent\textsc{\color{BlueSteel}\large\sf\bfseries{#1\newline\vspace{-0.25in}}}%
-  \@afterindentfalse\@afterheading}
+  \noindent\vspace{0.05in}\textsc{\color{BlueSteel}\large\sf\bfseries{#1\newline}}%
+  \@afterindentfalse\@afterheading\hspace{-0.038in}}
 \makeatother
 
 %%% Remove a lot of the space around lists  %%%

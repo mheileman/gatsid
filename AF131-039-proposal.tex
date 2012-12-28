@@ -128,15 +128,36 @@ The proposed Phase I effort is organized into the tasks shown in the Figure~\ref
 
 
 \subsection{Task Details and Technical Approach}
-Due to space limitations in this proposal, we focus our discussion most heavily on Tasks 2 and 4—defining the ASW F2F methodology and architecture—summarizing the other tasks at a higher level, since these other tasks are derived from Tasks 2 and 4 and are therefore somewhat self-explanatory.
+Due to space limitations in this proposal, we focus our discussion most heavily on Tasks 2 and 4 in defining the ASW F2F methodology and architecture summarizing the other tasks at a higher level, since these other tasks are derived from Tasks 2 and 4 and are therefore somewhat self-explanatory.
 
 \heading{Task 1: Kickoff Meeting}
+We will hold a kickoff meeting either at the customer's site or at MO headquarters, in Melbourne, Florida, based on customer preference. In this meeting, we will review the proposed technical approach and statement of work and firm up optional portions of our proposal.
 
-We will hold a kickoff meeting either at the customer’s site or at MO headquarters, in Melbourne, Florida, based on customer preference. In this meeting, we will review the proposed technical approach and statement of work and firm up optional portions of our proposal.
+\heading{Task 2: Requirements Extraction}
+The system has a wide requirements domain, stretching from dynamic information usage management to data storage to message delivery schemes.  In this phase, we will identify and enumerate system requirements, aiming for 90\% requirements coverage overall and 100\% requirements coverage with respect to core phase I functionality.  We will name and describe these requirements in a form suitable for future system development or documentation.  This analysis includes identification of sponsor POC geospacial technology used in future tasking.
 
-\heading{Task 2: Develop ASW F2F Methodology}
+The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source.
 
-Operator's Need. We propose to develop a detailed ASW F2F methodology in Phase I that can help ASW operators to identify mission relevant information, transform it into a normalized knowledge structure, and then correlate mission-specific information to support more effective situational awareness and understanding. The methodology will include operator inputs to the mission models at design time, execution of ASW F2F, and interactions with the system at run-time. By carefully defining this methodology, we propose to (1) document the concept of operation, (2) identify usability issues and technology gaps, (3) significantly reduce an operator's workload and, (4) improve his situational understanding by presenting filtered, fused, focused situational information that is highly relevant to his mission.
+\heading{Task 3: Establish Approaches and Architectures}
+Capturing nodes suitable for broadcast is a difficult, nuanced problem.  A variety of established architectural patterns can be potentially brought to bear on the problem, but they need to be carefully evaluated to ensure they will provide the required levels of service and scalability.  In this task, we will outline the potential architectural approaches we can use, describe how and why they are applicable, and address how they could be evaluated for potential production use.
+
+This task will result in the development of a catalog of architectural options including descriptions of the approaches and their advantages and disadvantages.  This catalog will also include specific evaluation points and potential proofs-of-concept that may need to be built.
+
+\heading{Task 4: Evaluate System Architecture Options}
+Building on the catalog established in the previous tasks, we will evaluate outlined technical and architectural approaches with an eye toward identifying common features.  We will examine the options available to us and choose the most promising as well as establish how we can establish a common extensible framework in which we can instantiate components embodying various different approaches for future experimentation and comparison.
+
+The outcome of this task is an ordered listing of potential approaches and an architectural outline of a common framework in which we can test the approaches identified.  
+
+\heading{Task 4a: System Development}
+During this task we will build a simple framework based on the common architecture identified previously.  We will keep the framework as simple as possible, but relevant and applicable to the operational domain. We will also develop components embodying the varied approaches to node capture, information usage management, and information dissemination. We will verify that these components can be loaded into the common framework and run correctly as expected to ease transition into future evaluation tasks.
+
+At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives.  We will be able to load and run this system using accepted geospacial displays identified in previous tasks with the help of sponsor POCs.
+
+\heading{Task 5: System Evaluation}
+At this point, we have established the key system components, developed the initial proof-of-concept technology, and are ready to evaluate various approaches and techniques.  We will run the developed system during this task and measure key performance attributes like supportable system load, information delivery times, dropped messages, and appropriate message delivery.  During this task, we will run the system and collect experimental results.
+
+\heading{Task 6: Findings}
+Finally, at the end of phase I, we will collect and submit our findings to the program sponsor along will all other developed system documentation, source code, and other applicable artifacts.
 
 \sbirsection{Related Work}{
 Modus Operandi is highly qualified to successfully perform this effort based on our years of directly related experience in semantic technologies, data fusion, DOD ISR systems, and with enabling technologies such as service-oriented architecture and net-centric computing. AHS Engineering Services and the University of New Mexico’s Informatics Lab are renowned for research in information security, information theory, and machine learning.}
