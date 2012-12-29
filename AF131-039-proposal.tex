@@ -92,9 +92,11 @@ Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can 
 \end{itemize} 
 
 \paragraph{Background and Need}~\\
-As stated in the topic description, the requirement is to ``enable on-the-move warfighters, equipped with state-of-the-art wireless information appliances (e.g., handheld, commercially-available or militarized, or wearable computers), to securely send and receive information that can be targeted and tailored for sender-specified geographic regions, sectors, or operating areas.
+On the move warfighters require access to relevant, geo-tagged information. This information must be delivered to devices including handheld multi-function computers, either commercially available or militarized, or wearable computational systems incorporating novel user interface schemes.  
 
-\sbircallout{The technical challenges.}{Summarize challenges here.}
+\sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery.  This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly.  Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
+
+This kind of information can include textual data, video, audio, or any other kind of required data displayable on a range of devices within any number of applications, and will be  delivered to sender-specified geographic points or areas.
 
 \paragraph{Challenge 1: Eligible device capture.}
 In order to effectively push notifications to eligible devices, those eligible devices must first be identified and captured by the system.  The overall system can capture these devices via pushing, polling, long polling, or some combination of these approaches.  Depending on the specific devices themselves, they may register themselves via other, underlying technical mechanisms as well.  Information must be transferred via internet protocol (IP), but certain devices like cell phones have other functionality of which this system can take advantage.  Furthermore, we have two distinct types of integratable devices.  The first, a fully featured device has IP networking capabilities as well as integrated global positioning system (GPS components).  This kind of device can be standalone and has an integrated sense of location.  The second device has IP networking capabilities as well, but uses geo-tethering to supply location services.
@@ -113,8 +115,19 @@ These kinds of problems are exacerbated by a pervasive internet-of-things.  As t
 \paragraph{Challenge 3: Dynamic, secure information usage management.} 
 Delivering information securely over these kinds of networks requires a dynamic, adaptive approach to changing field conditions.  Information usage management in this environment depends on robust identification management, context dependent access control, and adaptive security primitives.
 
+Any deployed system needs to understand who it's users are and their attributes.  DoD has developed services supporting this kind of identification management (IdM) via deployed attribute services and role-based authentication mechanisms.  These same kinds of systems would need to be used operationally in order to evaluate information consumption suitability.
 
-How to we provide usage management in this domain? we should have a lot to say here as we have significant work in this area.
+Access to information is heavily dependent not only on the person or device requesting or subscribed to data but also current operating conditions and intervening technology characteristics.  Under specific conditions, it may be in the interest of operating commanders to deliver information to individuals or devices that would not normally be allowed access.  These kinds of exceptional conditions, though rare, have certainly occurred in the recent past during natural disasters or unexpected enemy military operations.
+
+Finally, wide availability of high performance computing components and advancing distributed algorithmics are rendering encryption based security approaches weaker and weaker.  Adaptive security systems that can dynamically route or redact sensitive information based on environmental conditions support new ways to protect information in motion.
+
+\paragraph{Challenge 4: Warfighter Usability.}
+Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent congnitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
+
+Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.
+
+\paragraph{Meeting the challenges.}
+
 
 \sbirsection{Phase I Technical Objectives}
 {Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
