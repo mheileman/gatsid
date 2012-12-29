@@ -83,7 +83,15 @@ Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can 
 \end{itemize} 
 
 \paragraph{Background and Need}~\\
-As stated in the topic description, the requirement is to ``enable on-the-move warfighters, equipped with state-of-the-art wireless information appliances (e.g., handheld, commercially-available or militarized, or wearable computers), to securely send and receive information that can be targeted and tailored for sender-specified geographic regions, sectors, or operating areas.'' 
+As stated in the topic description, the requirement is to ``enable on-the-move warfighters, equipped with state-of-the-art wireless information appliances (e.g., handheld, commercially-available or militarized, or wearable computers), to securely send and receive information that can be targeted and tailored for sender-specified geographic regions, sectors, or operating areas.
+
+\sbircallout{The technical challenges.}{Summarize challenges here.}
+
+\sbirinline{Challenge 1: Device capture.} How do we determine the area a device is in? Application level registration and polling seems really naive.  We need to use IP for data transfer, but can we use lower levels of the network stack to determine when a device enters/leaves an area? or to determine specifically where a device is? How do other mobile devices do this?
+
+\sbirinline{Challenge 2: Scale.} How to handle internet-of-things scenarios? How can we store many, many nodes in a highly dynamic environment effectively so that lookups and record changes can happen in real-time? Because this certainly has a soft real-time requirement.  How can we transmit and accept messages over low bandwidth and high latency networks effectively?
+
+\sbirinline{Challenge 3: Dynamic usage management.} How to we provide usage management in this domain? we should have a lot to say here as we have significant work in this area.
 
 \sbirsection{Phase I Technical Objectives}
 {Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}

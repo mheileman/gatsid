@@ -221,6 +221,30 @@
 	         }%
 }
 \makeatother
+
+%%% Inline Callout %%%
+\makeatletter
+\newcommand{\sbircallout}[2]{%
+%	\@startsection{section}{1}{0pt}{1ex}{0.5ex}{\color{BlueSteel}\Large\sf\bfseries\raggedright}%
+%	{#1}%
+	{\vspace{0.05in}}
+	{\color{BlueSteel}\hrule}%
+	    %\ifthenelse{\equal{#1}{}}{}%
+		{\vspace*{-1ex}%
+		{\color{BlueSteel}\Large\sf\bfseries\raggedright #1} {\sf\large\color{BlueSteel} #2}\hspace*{\fill}%
+		\vspace*{0.75ex}%
+		{\color{BlueSteel}\hrule}%
+	         }%
+}
+\makeatother
+
+%%% Inline Highlight %%%
+\makeatletter
+\newcommand{\sbirinline}[1]{%
+  \noindent\textsc{\color{BlueSteel}\large\sf\bfseries{#1}}%
+  \@afterindentfalse\@afterheading\hspace{-0.038in}}
+\makeatother
+
   
 \titleformat{\subsection}						% Customize the \subsection command 
   {\color{BlueSteel}\large\sf\bfseries\raggedright}	% Make the \section headers large
