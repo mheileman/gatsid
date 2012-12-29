@@ -1,5 +1,14 @@
 \documentclass{sbir}
 
+\usepackage{fixme}
+\fxsetup{
+    status=draft,
+    author=,
+    layout=margin,
+    theme=color,
+    targetlayout=color
+}
+
 %%%%%%%%%% Proposal-specific Information %%%%%%%%%%%%%%%
 \company{Modus Operandi}
 \proposaltitle{GeoAID: Geographically-aware Assured Information Dissemination}
@@ -59,7 +68,7 @@
 
 However, there are numerous difficulties with this approach that must be accounted for by any system deployed to address the GATSID problem.  Most importantly, all advantages to the warfighter may be lost if information is not delivered in a provably assured manner. Indeed, we can easily conceive of mission scenarios where opposing forces actually gain strategic advantage due to information leakage associated with an improperly designed location-based dissemination system.  It would not be difficult to build a system that addresses the GATSID problem if we could hold all aspects of the operating and mission environments constant. In this case, a set of rules for how and when information should be delivered to whom could be enumerated and exhaustively validated.  The reality, however, is that military network environments are constantly changing in ways that cannot be anticipated, and no two mission environments are the same.  Thus, an architectural framework that is overly rigid will lead to a system that cannot be easily adapted or scaled to address future needs.  It is not uncommon for the complexity of such systems to grow over time, leading to a security situation that becomes increasingly more difficult to manage.
 
-\paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi (MO) and AHS Engineering Services (AHS), proposes to design, prototype and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem. The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
+\paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi (MO) and AHS Engineering Services (AHS), proposes to design, prototype and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem.  The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
 
 \paragraph{Our Approach.} Our approach to developing the GeoAID is to leverage two critical information integration technologies, usage management and ...  focusing on the specific threat prosecution test case and dataset to be provided as GFI in Phase I.
 
@@ -75,7 +84,7 @@ Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can 
    \item An Operator's Tool that allows users to configure ASW F2F with the semantic structures required of their missions, to deploy and execute the software, and to provide human-in-the-loop inputs to the system during execution; 
    \item Services that provide external applications, such as USW-DSS, with access to ASW F2F services via a service bus;
  \end{itemize}
- \item A hybrid reasoning architecture that leverages appropriate statistical methods by data type, such as Baysean Probability and Dempster-Shafer Theory for large amounts of hard (uncertain) data and inferencing rules (or logic) for soft data;
+ \item A hybrid reasoning architecture that leverages appropriate statistical methods by data type, such as Bayesian Probability and Dempster-Shafer Theory for large amounts of hard (uncertain) data and inferencing rules (or logic) for soft data;
  \item An initial, highly focused \hl{gizmo} prototype to prove approach feasibility, identify critical research focus areas for Phase II, identify research issues beyond the scope of this effort, and identify tasks that can be automated and those requiring a human-in-the-loop;
  \item Metrics to determine operator usability and detect-to-engagement improvements;
  \item Documentation on the \hl{gizmo} methodology, requirements, architecture, and prototype;
@@ -87,16 +96,30 @@ As stated in the topic description, the requirement is to ``enable on-the-move w
 
 \sbircallout{The technical challenges.}{Summarize challenges here.}
 
-\paragraph{Challenge 1: Device capture.} How do we determine the area a device is in? Application level registration and polling seems really naive.  We need to use IP for data transfer, but can we use lower levels of the network stack to determine when a device enters/leaves an area? or to determine specifically where a device is? How do other mobile devices do this?
+\paragraph{Challenge 1: Eligible device capture.}
+In order to effectively push notifications to eligible devices, those eligible devices must first be identified and captured by the system.  The overall system can capture these devices via pushing, polling, long polling, or some combination of these approaches.  Depending on the specific devices themselves, they may register themselves via other, underlying technical mechanisms as well.  Information must be transferred via internet protocol (IP), but certain devices like cell phones have other functionality of which this system can take advantage.  Furthermore, we have two distinct types of integratable devices.  The first, a fully featured device has IP networking capabilities as well as integrated global positioning system (GPS components).  This kind of device can be standalone and has an integrated sense of location.  The second device has IP networking capabilities as well, but uses geo-tethering to supply location services.
 
-\paragraph{Challenge 2: Scale.} How to handle internet-of-things scenarios? How can we store many, many nodes in a highly dynamic environment effectively so that lookups and record changes can happen in real-time? Because this certainly has a soft real-time requirement.  How can we transmit and accept messages over low bandwidth and high latency networks effectively?
+The local mechanisms supporting GeoAID are open ended with specific functional limitations.  Even though we have two specific device classifications the system must support, these device profiles need to be expanded to specific, phisical devices that may be used in the field.  Once identified, we can leverage these device's intrinsic applications and capabilities to provide a more integrated overall warfighter experience.  Other devices may be stripped down to only IP networking, installed application software enabling GeoAID, and either geo-tethered or native GPS services.  In either case, to minimize overall investment, we will use mobile-first development concepts to establish a common functional core that exploits other system services as they exists.
 
-\paragraph{Challenge 3: Dynamic usage management.} How to we provide usage management in this domain? we should have a lot to say here as we have significant work in this area.
+Likewise, overall device registration is can be implemented using a variety of different approaches.  Message delivery systems that push messages to registered devices have clear scalability advantages over polling-centric approaches, but are not always feasible to implement on limited systems.  An eventual production system may require a combination of pushing and polling, depending on clients and available services.  One of the goals of this work addresses how and why to combine these approaches most efficiently.
+
+\paragraph{Challenge 2: Operational Scale.}
+This kind of deployed system presents scalability challenges in a number of different ways.  Operational bandwidth may be limited, network latency may be high, and it is possible to have a large number of registered devices receiving messages in a small operational area.
+
+Dynamic operating conditions my impose rapidly fluctuating network attributes.  This requires deployed systems to be able to smoothly adjust to changing conditions, including changes in available bandwidth.  This makes certain architectural choices more attractive than others.  Message pushing, for example, uses half the bandwidth as request/response based polling, but requires additional complexity on client and server systems.  Using appropriately scalable approaches is vital to providing appropriate in-theater levels of service.  Furthermore, approaches may need to change based on operating conditions.  In cases with high latency, devices may need to incorporate some kind of peering arrangement to facilitate timely notification delivery.
+
+These kinds of problems are exacerbated by a pervasive internet-of-things.  As this kind of system moves from human-to-device to device-to-device modes of communication, possible supported information flow speeds, network requirements, and computational demands all increase.  These growing demands require innovative solutions supporting uninterrupted service under soft real-time constraints.
+
+\paragraph{Challenge 3: Dynamic, secure information usage management.} 
+Delivering information securely over these kinds of networks requires a dynamic, adaptive approach to changing field conditions.  Information usage management in this environment depends on robust identification management, context dependent access control, and adaptive security primitives.
+
+
+How to we provide usage management in this domain? we should have a lot to say here as we have significant work in this area.
 
 \sbirsection{Phase I Technical Objectives}
 {Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
 
-Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype—based on the government furnished threat prosecution scenario and dataset—to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.
+Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.
 
 \sbirsection{Phase I Statement of Work}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
