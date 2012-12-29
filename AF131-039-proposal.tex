@@ -98,22 +98,19 @@ On the move warfighters require access to relevant, geo-tagged information. This
 
 This kind of information can include textual data, video, audio, or any other kind of required data displayable on a range of devices within any number of applications, and will be  delivered to sender-specified geographic points or areas.
 
-\paragraph{Challenge 1: Eligible device capture.}
-In order to effectively push notifications to eligible devices, those eligible devices must first be identified and captured by the system.  The overall system can capture these devices via pushing, polling, long polling, or some combination of these approaches.  Depending on the specific devices themselves, they may register themselves via other, underlying technical mechanisms as well.  Information must be transferred via internet protocol (IP), but certain devices like cell phones have other functionality of which this system can take advantage.  Furthermore, we have two distinct types of integratable devices.  The first, a fully featured device has IP networking capabilities as well as integrated global positioning system (GPS components).  This kind of device can be standalone and has an integrated sense of location.  The second device has IP networking capabilities as well, but uses geo-tethering to supply location services.
+\paragraph{Challenge 1: Eligible device capture.}  In order to effectively push notifications to eligible devices, those eligible devices must first be identified and captured by the system.  The overall system can capture these devices via pushing, polling, long polling, or some combination of these approaches.  Depending on the specific devices themselves, they may register themselves via other, underlying technical mechanisms as well.  Information must be transferred via internet protocol (IP), but certain devices like cell phones have other functionality of which this system can take advantage.  Furthermore, we have two distinct types of integratable devices.  The first, a fully featured device has IP networking capabilities as well as integrated global positioning system (GPS components).  This kind of device can be standalone and has an integrated sense of location.  The second device has IP networking capabilities as well, but uses geo-tethering to supply location services.
 
 The local mechanisms supporting GeoAID are open ended with specific functional limitations.  Even though we have two specific device classifications the system must support, these device profiles need to be expanded to specific, phisical devices that may be used in the field.  Once identified, we can leverage these device's intrinsic applications and capabilities to provide a more integrated overall warfighter experience.  Other devices may be stripped down to only IP networking, installed application software enabling GeoAID, and either geo-tethered or native GPS services.  In either case, to minimize overall investment, we will use mobile-first development concepts to establish a common functional core that exploits other system services as they exists.
 
 Likewise, overall device registration is can be implemented using a variety of different approaches.  Message delivery systems that push messages to registered devices have clear scalability advantages over polling-centric approaches, but are not always feasible to implement on limited systems.  An eventual production system may require a combination of pushing and polling, depending on clients and available services.  One of the goals of this work addresses how and why to combine these approaches most efficiently.
 
-\paragraph{Challenge 2: Operational Scale.}
-This kind of deployed system presents scalability challenges in a number of different ways.  Operational bandwidth may be limited, network latency may be high, and it is possible to have a large number of registered devices receiving messages in a small operational area.
+\paragraph{Challenge 2: Operational Scale.}  This kind of deployed system presents scalability challenges in a number of different ways.  Operational bandwidth may be limited, network latency may be high, and it is possible to have a large number of registered devices receiving messages in a small operational area.
 
 Dynamic operating conditions my impose rapidly fluctuating network attributes.  This requires deployed systems to be able to smoothly adjust to changing conditions, including changes in available bandwidth.  This makes certain architectural choices more attractive than others.  Message pushing, for example, uses half the bandwidth as request/response based polling, but requires additional complexity on client and server systems.  Using appropriately scalable approaches is vital to providing appropriate in-theater levels of service.  Furthermore, approaches may need to change based on operating conditions.  In cases with high latency, devices may need to incorporate some kind of peering arrangement to facilitate timely notification delivery.
 
 These kinds of problems are exacerbated by a pervasive internet-of-things.  As this kind of system moves from human-to-device to device-to-device modes of communication, possible supported information flow speeds, network requirements, and computational demands all increase.  These growing demands require innovative solutions supporting uninterrupted service under soft real-time constraints.
 
-\paragraph{Challenge 3: Dynamic, secure information usage management.} 
-Delivering information securely over these kinds of networks requires a dynamic, adaptive approach to changing field conditions.  Information usage management in this environment depends on robust identification management, context dependent access control, and adaptive security primitives.
+\paragraph{Challenge 3: Dynamic, secure information usage management.}  Delivering information securely over these kinds of networks requires a dynamic, adaptive approach to changing field conditions.  Information usage management in this environment depends on robust identification management, context dependent access control, and adaptive security primitives.
 
 Any deployed system needs to understand who it's users are and their attributes.  DoD has developed services supporting this kind of identification management (IdM) via deployed attribute services and role-based authentication mechanisms.  These same kinds of systems would need to be used operationally in order to evaluate information consumption suitability.
 
@@ -121,27 +118,49 @@ Access to information is heavily dependent not only on the person or device requ
 
 Finally, wide availability of high performance computing components and advancing distributed algorithmics are rendering encryption based security approaches weaker and weaker.  Adaptive security systems that can dynamically route or redact sensitive information based on environmental conditions support new ways to protect information in motion.
 
-\paragraph{Challenge 4: Warfighter Usability.}
-Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent congnitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
+\paragraph{Challenge 4: Warfighter Usability.}  Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent cognitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
 
 Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.
 
-\paragraph{Meeting the challenges.}
-
+\paragraph{Meeting the challenges.}  \fixme{Content needed for meeting the challenges}{We need to flesh this out after completing the objectives section.}
 
 \sbirsection{Phase I Technical Objectives}
 {Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
 
-Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.
+\fixme{This needs to all be updated with real content and objectives tied back to challenges.}{Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.}
 
 \sbirsection{Phase I Work Plan}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
 
-\paragraph{Phase I Work Plan Outline (Non-proprietary)}~\\
- \paragraph{Scope.}~\\
- \paragraph{Task Outline.}~\\
- \paragraph{Milestone Schedule.}~\\
- \paragraph{Deliverables.}~\\
+\paragraph{Phase I Work Plan Outline (Non-proprietary)}
+\paragraph{Scope}~\\
+The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters.  Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by a sponsor POC.  This includes delivery of supporting software code, documentation, and design artifacts.
+
+\paragraph{Task Outline}~\\
+\begin{enumerate}
+\item {\bf Kickoff Meeting} --- A kickoff meeting to present details of the technical approach and to discuss project programmatics will be held at AFOSR (Arlington, VA) or MO HQ within 30 days of contract start.
+\item {\bf Requirements Extraction} --- Extracting requirements from relevant sources for future development in a form suitable for backward and forward traceability.
+\item {\bf Establish Approaches and Architectures} --- Identifying technical options for future evaluation and possible development.
+\item {\bf Evaluate System Architecture Options} --- Evaluating identified options and extracting system commonalities for future framework implementation.
+\item {\bf System Development} --- Developing the information delivery system using information collected from previous tasks.
+\item {\bf System Evaluation} --- Evaluating the system and various technical plugins for operational suitability and efficiency.
+\item {\bf Findings} --- Collecting all deliverables and experimental findings and delivering to sponsor agencies.
+\end{enumerate}
+
+
+\paragraph{Milestone Schedule}~\\
+The proposed Phase I effort is scheduled as shown in the Gantt chart in the figure~\ref{Gantt}. The majority of the primary research will be accomplished during the first six months of the Phase I STTR project. The last three months will provide project continuity to Phase II. Prime contractor work will be performed at Modus Operandi's headquarters located in Melbourne, Florida.
+
+\paragraph{Deliverables}~\\
+We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
+\begin{itemize}
+\item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
+\item {\bf Architectural Catalog} --- A document describing system architectural options, advantages and disadvantages of those options, and how the they can be evaluated.
+\item {\bf Software Source Code} --- Any and all developed source code, including proofs-of-concept and operational software.  This will also include documentation of the developed software.
+\item {\bf Automated Test Suite} --- An automated test suite covering the system and all developed source code upon which the system is based.
+\item {\bf Operational System} --- The operational system itself.  This will consist of associated hardware acquired for use, operating system images, source code, and deployment instructions, as applicable.
+\item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
+\end{itemize}
 
 Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
 
@@ -150,22 +169,25 @@ Modus Operandi is an experienced and highly capable STTR/SBIR contractor with a 
 
 \subsection{Task Summary and Schedule}
 The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at facilities in the Department of Electrical and Computer Engineering at the University of New Mexico in Albuquerque, New Mexico.
+
+\fixme{new gantt chart needed that describes timeline and real tasking}{
 \begin{figure}
  \centerline{\includegraphics[width=4in]{./images/Gantt.png}}
- \caption{Task and Milestone Schedule.}\label{Gantt}
+ \caption{Task and Milestone Schedule.}
+ \label{Gantt}
 \end{figure}
+}
 
 \begin{center}
-   \fcolorbox{BlueSteel}{Magnum}{
-         \begin{minipage}[t]{0.9\textwidth}
-             \begin{itemize}[labelindent=2em,leftmargin=1.5em,label=$\checkmark$] 
-  		\item Innovative \hl{<blah blah>} Find-to-Forecast methodology for finding ``intelligence wheat" and filtering out the ``chaff."
-  		\item Machine learning and hybrid reasoning architecture supports inferencing, statistical processing, and human-in-the-loop inputs.
-  		\item Operator-centric architecture tailors mission-specific information to an AOI.
-  		\item Mission knowledge base to archive and access mission-specific models for enhanced situation understanding that adapts according to previous learning.
- 	\end{itemize}
-         \end{minipage}
-      }
+\fcolorbox{BlueSteel}{Magnum}{
+\begin{minipage}[t]{0.9\textwidth}
+\begin{itemize}[labelindent=2em,leftmargin=1.5em,label=$\checkmark$] 
+\item Building on information usage management and cloud expertise.
+\item Reusing secure cross-domain information-centric systems for data delivery.
+\item Mobile-first approach guarantees application-level configurability.
+\item Innovative peering approaches to dynamic information delivery needs.
+\end{itemize}
+\end{minipage}}
 \end{center}
 
 
@@ -178,7 +200,7 @@ We will hold a kickoff meeting either at the customer's site or at MO headquarte
 \heading{Task 2: Requirements Extraction}
 The system has a wide requirements domain, stretching from dynamic information usage management to data storage to message delivery schemes.  In this phase, we will identify and enumerate system requirements, aiming for 90\% requirements coverage overall and 100\% requirements coverage with respect to core phase I functionality.  We will name and describe these requirements in a form suitable for future system development or documentation.  This analysis includes identification of sponsor POC geospatial technology used in future tasking.
 
-The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source.
+The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source.  The requirements will be enumerated as well as presented in either use case or user story formats.
 
 \heading{Task 3: Establish Approaches and Architectures}
 Capturing nodes suitable for broadcast is a difficult, nuanced problem.  A variety of established architectural patterns can be potentially brought to bear on the problem, but they need to be carefully evaluated to ensure they will provide the required levels of service and scalability.  In this task, we will outline the potential architectural approaches we can use, describe how and why they are applicable, and address how they could be evaluated for potential production use.  We will leverage our established usage management technologies and experience to control information flow based on dynamic environmental context and used devices, extending that technology to seamlessly fit within this specific domain~\cite{JaLaHe:11,JaLaHe:12}.
