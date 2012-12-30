@@ -19,12 +19,13 @@
 
 \begin{document}
 
+\listoffixmes
+\newpage
+ 
 %%%%%  Roman numerals for TOC  %%%%%
 \pagenumbering{roman}
 \tableofcontents
  \newpage
- 
-% \listoffixmes
  
 %%%%% Set the page number that the main proposal will start on %%%%%%
  \pagenumbering{arabic}
@@ -132,11 +133,13 @@ Though not completely in scope for this work, nevertheless deployed information 
 \sbirsection{Phase I Work Plan}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
 
+\newpage 
+\pagestyle{nonproprietary}
 \paragraph{Phase I Work Plan Outline (Non-proprietary)}
 \paragraph{Scope}~\\
 The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters.  Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by a sponsor POC.  This includes delivery of supporting software code, documentation, and design artifacts.
 
-\paragraph{Task Outline}~\\
+\paragraph{Task Outline}
 \begin{enumerate}
 \item {\bf Kickoff Meeting} --- A kickoff meeting to present details of the technical approach and to discuss project programmatics will be held at AFOSR (Arlington, VA) or MO HQ within 30 days of contract start.
 \item {\bf Requirements Extraction} --- Extracting requirements from relevant sources for future development in a form suitable for backward and forward traceability.
@@ -147,12 +150,35 @@ The scope of this work is to build and deploy a system incorporating advanced us
 \item {\bf Findings} --- Collecting all deliverables and experimental findings and delivering to sponsor agencies.
 \end{enumerate}
 
-
 \paragraph{Milestone Schedule}~\\
 The proposed Phase I effort is scheduled as shown in the Gantt chart in the figure~\ref{Gantt}. The majority of the primary research will be accomplished during the first six months of the Phase I STTR project. The last three months will provide project continuity to Phase II. Prime contractor work will be performed at Modus Operandi's headquarters located in Melbourne, Florida.
 
+\begin{figure}[h]
+ \centerline{\includegraphics[width=5in]{./images/Gantt.png}}
+ \caption{Task and Milestone Schedule.}
+ \label{Gantt}
+\end{figure}
+
 \paragraph{Deliverables}~\\
 We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
+\begin{enumerate}
+\item Kickoff meeting within 30 days of contract start.
+\item Progress reports.
+\item Technical review within 6 months.
+\item Final report with SF 298.
+\end{enumerate}
+
+Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
+
+\newpage
+\pagestyle{proprietary}
+
+\subsection{Key Aspects and Innovation}
+Modus Operandi is an experienced and highly capable STTR/SBIR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. The University of New Mexico is a Carnegie Very High Research Activity University, and the Informatics Research Group is highly experienced in the areas of machine learning and hybrid intelligent systems. Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
+
+\subsection{Task Summary and Schedule}
+The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at facilities in the Department of Electrical and Computer Engineering at the University of New Mexico in Albuquerque, New Mexico.
+
 \begin{itemize}
 \item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
 \item {\bf Architectural Catalog} --- A document describing system architectural options, advantages and disadvantages of those options, and how the they can be evaluated.
@@ -161,22 +187,6 @@ We expect to have six specific deliverables as a result of this work.  These ran
 \item {\bf Operational System} --- The operational system itself.  This will consist of associated hardware acquired for use, operating system images, source code, and deployment instructions, as applicable.
 \item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
 \end{itemize}
-
-Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
-
-\subsection{Key Aspects and Innovation}
-Modus Operandi is an experienced and highly capable STTR/SBIR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. The University of New Mexico is a Carnegie Very High Research Activity University, and the Informatics Research Group is highly experienced in the areas of machine learning and hybrid intelligent systems. Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
-
-\subsection{Task Summary and Schedule}
-The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at facilities in the Department of Electrical and Computer Engineering at the University of New Mexico in Albuquerque, New Mexico.
-
-\fixme{new gantt chart needed that describes timeline and real tasking}{
-\begin{figure}
- \centerline{\includegraphics[width=4in]{./images/Gantt.png}}
- \caption{Task and Milestone Schedule.}
- \label{Gantt}
-\end{figure}
-}
 
 \begin{center}
 \fcolorbox{BlueSteel}{Magnum}{
@@ -189,7 +199,6 @@ The proposed Phase I effort is organized into the tasks shown in the Figure~\ref
 \end{itemize}
 \end{minipage}}
 \end{center}
-
 
 \subsection{Task Details and Technical Approach}
 Due to space limitations in this proposal, we focus our discussion most heavily on Tasks 2 and 4 in defining the ASW F2F methodology and architecture summarizing the other tasks at a higher level, since these other tasks are derived from Tasks 2 and 4 and are therefore somewhat self-explanatory.
@@ -215,7 +224,7 @@ The outcome of this task is an ordered listing of potential approaches and an ar
 \heading{Task 4a: System Development}
 During this task we will build a simple framework based on the common architecture identified previously.  We will keep the framework as simple as possible, but relevant and applicable to the operational domain. We will also develop components embodying the varied approaches to node capture, information usage management, and information dissemination. We will verify that these components can be loaded into the common framework and run correctly as expected to ease transition into future evaluation tasks.
 
-We will further build upon our cloud engineering experience and in-house infrastructure to develop economical, standards-based systems based around portable system configurations.  We will further automate event collection for future reporting using systems deployed in past information-centric data flow research~\cite{IJCLOSER:Lamb}.
+We will further build upon our cloud engineering experience and in-house infrastructure to develop economical, standards-based systems based around portable system configurations.  We will further automate event collection for future reporting using systems deployed in past information-centric data flow research~\cite{LaHe:12b}.
 
 At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives.  We will be able to load and run this system using accepted geospatial displays identified in previous tasks with the help of sponsor POCs.
 
@@ -474,8 +483,7 @@ All instrumentation and physical facilities required to carry out the Phase I ef
 \sbirsection{Prior, Current, or Pending Support of Similar Proposals or Awards}{}
 No prior, current, or pending support for the proposed work.
 
-
- \bibliography{proposal.bib}
+ \bibliography{proposal}
  \bibliographystyle{abbrv}
  
  

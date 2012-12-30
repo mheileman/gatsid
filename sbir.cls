@@ -54,6 +54,7 @@
 \RequirePackage[T1]{fontenc} % needed for boldface smallcap font
 \RequirePackage{natbib}
 \RequirePackage{multicol}
+\RequirePackage{tocloft}
 
 % Defined colors
 \definecolor{BlueSteel}{rgb}{0,0,0.5}
@@ -80,6 +81,9 @@
 \bibfont{\small}
 \setlength{\bibsep}{2pt}
 
+%%%% table of contents settings  %%%%
+\setlength\cftparskip{2pt}
+
 % define newcommands for proposal information
 \newcommand*{\company}[1]{\def\fromcompany{#1}}
 \newcommand*{\proposaltitle}[1]{\def\fromproposaltitle{#1}}
@@ -91,6 +95,7 @@
 \company{}\proposaltitle{}\topicnum{}\proposalnum{}\proposaltype{}
 
 %%%% Information that goes in the header and footer  %%%  
+\newcommand{\ps@proprietary}{
   \pagestyle{fancy}
   \lhead{\color{LeTigre}\scshape\fromcompany}
   \chead{\color{LeTigre}\scshape{Proprietary}~\\ Topic No: \fromtopicnum}
@@ -98,6 +103,20 @@
   \lfoot{\color{LeTigre}\scshape{Proprietary}}
   \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage}
   \rfoot{\color{LeTigre}\scshape\fromproposaltype}
+}
+
+\pagestyle{proprietary}
+  
+%%%%  page style for nonproprietary page  %%%%
+\newcommand{\ps@nonproprietary}{
+  \pagestyle{fancy}
+  \lhead{\color{LeTigre}\scshape\fromcompany}
+  \chead{\color{LeTigre}\scshape{}~\\ Topic No: \fromtopicnum}
+  \rhead{\color{LeTigre}Proposal No: \fromproposalnum}
+  \lfoot{\color{LeTigre}\scshape{}}
+  \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage}
+  \rfoot{\color{LeTigre}\scshape\fromproposaltype}  
+}
 
 %%% New counters %%%
 \newcounter{task}
