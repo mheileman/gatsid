@@ -95,6 +95,15 @@ Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can 
 \paragraph{Background and Need}~\\
 On the move warfighters require access to relevant, geo-tagged information. This information must be delivered to devices including handheld multi-function computers, either commercially available or militarized, or wearable computational systems incorporating novel user interface schemes.  
 
+\begin{figure}
+ \vspace{1in}
+ \begin{center}
+  $<$ A usage management figure goes here $>$
+  \end{center}\fixme{Usage management figure}
+ \vspace{1in}
+  \caption{A high level depiction of the usage management framework.}\label{UM}
+ \end{figure}
+
 \sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery.  This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly.  Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
 
 This kind of information can include textual data, video, audio, or any other kind of required data displayable on a range of devices within any number of applications, and will be  delivered to sender-specified geographic points or areas.
@@ -113,7 +122,7 @@ These kinds of problems are exacerbated by a pervasive internet-of-things.  As t
 
 \paragraph{Challenge 3: Dynamic, secure information usage management.}  Delivering information securely over these kinds of networks requires a dynamic, adaptive approach to changing field conditions.  Information usage management in this environment depends on robust identification management, context dependent access control, and adaptive security primitives.
 
-Any deployed system needs to understand who it's users are and their attributes.  DoD has developed services supporting this kind of identification management (IdM) via deployed attribute services and role-based authentication mechanisms.  These same kinds of systems would need to be used operationally in order to evaluate information consumption suitability.
+Any deployed system needs to understand who its users are and their attributes.  DoD has developed services supporting this kind of identification management (IdM) via deployed attribute services and role-based authentication mechanisms.  These same kinds of systems would need to be used operationally in order to evaluate information consumption suitability.
 
 Access to information is heavily dependent not only on the person or device requesting or subscribed to data but also current operating conditions and intervening technology characteristics.  Under specific conditions, it may be in the interest of operating commanders to deliver information to individuals or devices that would not normally be allowed access.  These kinds of exceptional conditions, though rare, have certainly occurred in the recent past during natural disasters or unexpected enemy military operations.
 
@@ -126,27 +135,22 @@ Though not completely in scope for this work, nevertheless deployed information 
 \paragraph{Meeting the challenges.}  \fixme{Content needed for meeting the challenges}{We need to flesh this out after completing the objectives section.}
 
 \sbirsection{Phase I Technical Objectives}
-{The project challenges motivate our technical objectives.  By meeting these objectives, we will develop a reusable architecture supporting geo-sensitive messaging for engaged warfighters, positioning this project for future phase II work.}
+{Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
 
-%{Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
+\fixme{This needs to all be updated with real content and objectives tied back to challenges.}{Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.}
 
-\fxnote{The first objective outline; different types of polling, registration, embedded servers}{
-\paragraph{Objective 1: Device tracking.} ~\\
-- taxonomy of devices \\
-- application level polling and long polling \\
-- application level device registration with incorporated servers \\
-- network level notifications \\
-}
-
-\fxnote{The second objective outline; scaling via p2p comms; is there a third option besides p2p and c/s?}{
-\paragraph{Objective 2: Operating with variable scale.} ~\\
-- network and device scale \\
-}
-
-%\fixme{This needs to all be updated with real content and objectives tied back to challenges.}{Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.}
+\begin{figure}
+ \vspace{1in}
+ \begin{center}
+  $<$ A compelling high-level architectural graphic will go here $>$
+  \end{center}\fixme{GeoAID architectural figure}
+ \vspace{1in}
+  \caption{GeoAIDS architectural overview.}\label{GeoAIDarch}
+ \end{figure}
 
 \sbirsection{Phase I Work Plan}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
+\fixme{Mark will add a work plan sentence here.}
 
 \newpage 
 \pagestyle{nonproprietary}
@@ -154,7 +158,8 @@ Though not completely in scope for this work, nevertheless deployed information 
 \paragraph{Scope}~\\
 The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters.  Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by a sponsor POC.  This includes delivery of supporting software code, documentation, and design artifacts.
 
-\paragraph{Task Outline}
+\paragraph{Task Outline} 
+\fixme{These need to match the tasks in the Tasks Details and Technical Approach section - Mark will fix.}
 \begin{enumerate}
 \item {\bf Kickoff Meeting} --- A kickoff meeting to present details of the technical approach and to discuss project programmatics will be held at AFOSR (Arlington, VA) or MO HQ within 30 days of contract start.
 \item {\bf Requirements Extraction} --- Extracting requirements from relevant sources for future development in a form suitable for backward and forward traceability.
@@ -176,14 +181,12 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in the figu
 
 \paragraph{Deliverables}~\\
 We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
-
-\fixme{I'm not sure why this is here.  Is the original list too specific?}{
 \begin{enumerate}
 \item Kickoff meeting within 30 days of contract start.
 \item Progress reports.
 \item Technical review within 6 months.
 \item Final report with SF 298.
-\end{enumerate}}
+\end{enumerate}
 
 Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
 
@@ -195,6 +198,16 @@ Modus Operandi is an experienced and highly capable STTR/SBIR contractor with a 
 
 \subsection{Task Summary and Schedule}
 The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at facilities in the Department of Electrical and Computer Engineering at the University of New Mexico in Albuquerque, New Mexico.
+
+\fixme{These need to match the tasks in the Tasks Details and Technical Approach section - Mark will fix.}
+\begin{itemize}
+\item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
+\item {\bf Architectural Catalog} --- A document describing system architectural options, advantages and disadvantages of those options, and how the they can be evaluated.
+\item {\bf Software Source Code} --- Any and all developed source code, including proofs-of-concept and operational software.  This will also include documentation of the developed software.
+\item {\bf Automated Test Suite} --- An automated test suite covering the system and all developed source code upon which the system is based.
+\item {\bf Operational System} --- The operational system itself.  This will consist of associated hardware acquired for use, operating system images, source code, and deployment instructions, as applicable.
+\item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
+\end{itemize}
 
 \begin{center}
 \fcolorbox{BlueSteel}{Magnum}{
@@ -209,49 +222,44 @@ The proposed Phase I effort is organized into the tasks shown in the Figure~\ref
 \end{center}
 
 \subsection{Task Details and Technical Approach}
-Due to space limitations in this proposal, we focus our discussion most heavily on Tasks 2 and 4 in defining the ASW F2F methodology and architecture summarizing the other tasks at a higher level, since these other tasks are derived from Tasks 2 and 4 and are therefore somewhat self-explanatory.
+The Modus Operandi Team proposes agile software development for accomplishing the Phase I tasks detailed below. Agile software development is a group of software development methods based on iterative and incremental development, where requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development and delivery, a time-boxed iterative approach, and encourages rapid and flexible response to change. It is a conceptual framework that promotes foreseen interactions throughout the development cycle~\cite{} \fixme{Add a good agile software development reference}
 
 \heading{Task 1: Kickoff Meeting}
-We will hold a kickoff meeting either at the customer's site or at MO headquarters, in Melbourne, Florida, based on customer preference. In this meeting, we will review the proposed technical approach and statement of work and firm up optional portions of our proposal.
+We will hold a kickoff meeting either at the government’s site or at MO headquarters, in Melbourne, Florida, based on Government Sponsor Point of Contact (POC) preference. In this meeting we will review the proposed technical approach and statement of work and clarify the research sponsor’s technical direction. In order to begin to address specific system needs, the team will assemble a coarsely grained Concept of Operations document that describes how the system should work. This will be a living document and will be updated regularly while the team executes other specific tasks. 
 
 \heading{Task 2: Requirements Extraction}
-The system has a wide requirements domain, stretching from dynamic information usage management to data storage to message delivery schemes.  In this phase, we will identify and enumerate system requirements, aiming for 90\% requirements coverage overall and 100\% requirements coverage with respect to core phase I functionality.  We will name and describe these requirements in a form suitable for future system development or documentation.  This analysis includes identification of sponsor POC geospatial technology used in future tasking.
+The system has a wide requirements domain, stretching from dynamic information usage management to data storage to message delivery schemes. In this task, we will identify and enumerate system requirements, aiming for 90\% requirements coverage overall and 100\% requirements coverage with respect to core Phase I functionality. We will name and describe these requirements in a form suitable for future system development or documentation. This analysis includes identification of Sponsor POC geospatial technology used in future tasking.
 
-The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source.  The requirements will be enumerated as well as presented in either use case or user story formats.
+The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source. The requirements will be enumerated as well as presented in either use case or user story formats.
 
 \heading{Task 3: Establish Approaches and Architectures}
-Capturing nodes suitable for broadcast is a difficult, nuanced problem.  A variety of established architectural patterns can be potentially brought to bear on the problem, but they need to be carefully evaluated to ensure they will provide the required levels of service and scalability.  In this task, we will outline the potential architectural approaches we can use, describe how and why they are applicable, and address how they could be evaluated for potential production use.  We will leverage our established usage management technologies and experience to control information flow based on dynamic environmental context and used devices, extending that technology to seamlessly fit within this specific domain~\cite{JaLaHe:11,JaLaHe:12}.
+Capturing nodes suitable for broadcast is a difficult, nuanced problem. A variety of established architectural patterns can be potentially brought to bear on the problem, but they need to be carefully evaluated to ensure they will provide the required levels of service and scalability. In this task, we will outline the potential architectural approaches we can use, describe how and why they are applicable, and address how they could be evaluated for potential production use. We will leverage our established usage management technologies and experience to control information flow based on dynamic environmental context and used devices, extending that technology to seamlessly fit within this specific domain ~\cite{JaLaHe:11,JaLaHe:12}.
 
-This task will result in the development of a catalog of architectural options including descriptions of the approaches and their advantages and disadvantages.  This catalog will also include specific evaluation points and potential proofs-of-concept that may need to be built.
+This task will result in the development of a catalog of architectural options including descriptions of the approaches and their advantages and disadvantages. This catalog will also include specific evaluation points and potential proofs-of-concept that may need to be built.
 
 \heading{Task 4: Evaluate System Architecture Options}
-Building on the catalog established in the previous tasks, we will evaluate outlined technical and architectural approaches with an eye toward identifying common features.  We will examine the options available to us and choose the most promising as well as establish how we can establish a common extensible framework in which we can instantiate components embodying various different approaches for future experimentation and comparison.
+Building on the catalog established in the previous tasks, we will evaluate outlined technical and architectural approaches with an eye toward identifying common features. We will examine the options available to us and choose the most promising as well as establish how we can establish a common extensible framework in which we can instantiate components embodying various different approaches for future experimentation and comparison.
 
-The outcome of this task is an ordered listing of potential approaches and an architectural outline of a common framework in which we can test the approaches identified.  
+The outcome of this task is an ordered listing of potential approaches and an architectural outline of a common framework in which we can test the approaches identified.
 
-\heading{Task 4a: System Development}
-During this task we will build a simple framework based on the common architecture identified previously.  We will keep the framework as simple as possible, but relevant and applicable to the operational domain. We will also develop components embodying the varied approaches to node capture, information usage management, and information dissemination. We will verify that these components can be loaded into the common framework and run correctly as expected to ease transition into future evaluation tasks.
+\heading{Task 5: System Development}
+During this task we will build a simple framework based on the common architecture identified previously. We will keep the framework as simple as possible, but relevant and applicable to the operational domain. We will also develop components embodying the varied approaches to node capture, information usage management, and information dissemination. We will verify that these components can be loaded into the common framework and run correctly as expected to ease transition into future evaluation tasks.
 
-We will further build upon our cloud engineering experience and in-house infrastructure to develop economical, standards-based systems based around portable system configurations.  We will further automate event collection for future reporting using systems deployed in past information-centric data flow research~\cite{LaHe:12b}.
+We will further build upon our cloud engineering experience and in-house infrastructure to develop economical, standards-based systems based around portable system configurations. We will further automate event collection for future reporting using systems deployed in past information-centric data flow research~\cite{LaHe:12b}.
 
-At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives.  We will be able to load and run this system using accepted geospatial displays identified in previous tasks with the help of sponsor POCs.
+At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives. We will be able to load and run this system using accepted geospatial displays identified in previous tasks with the help of the Sponsor POC.
 
-\heading{Task 5: System Evaluation}
-At this point, we have established the key system components, developed the initial proof-of-concept technology, and are ready to evaluate various approaches and techniques.  We will run the developed system during this task and measure key performance attributes like supportable system load, information delivery times, dropped messages, and appropriate message delivery.  During this task, we will run the system and collect experimental results.
+\heading{Task 6: System Evaluation}
+At this point, we have established the key system components, developed the initial proof-of-concept technology, and are ready to evaluate various approaches and techniques. We will run the developed system during this task and measure key performance attributes like supportable system load, information delivery times, dropped messages, and appropriate message delivery. During this task, we will run the system and collect experimental results.
 
-\heading{Task 6: Findings}
-Finally, at the end of phase I, we will collect and submit our findings to the program sponsor along will all other developed system documentation, source code, and other applicable artifacts.
+\heading{Task 7: Technical Review Meeting}
+We will hold a technical review meeting with the project government sponsors within 6 months of project commencement. The GeoAID concept of operations, system requirements, and architectural options will be reviewed and refined at this meeting.
 
-Specific deliverables from the outlined tasks include:
+\heading{Task 8: Proof-of-Concept Prototype}
+We will develop a preliminary version of the GeoAID system as a proof-of-concept prototype demonstration. We will provide the demonstration using an accepted geospatial display from Sponsor POC recommended system(s).
 
-\begin{itemize}
-\item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
-\item {\bf Architectural Catalog} --- A document describing system architectural options, advantages and disadvantages of those options, and how the they can be evaluated.
-\item {\bf Software Source Code} --- Any and all developed source code, including proofs-of-concept and operational software.  This will also include documentation of the developed software.
-\item {\bf Automated Test Suite} --- An automated test suite covering the system and all developed source code upon which the system is based.
-\item {\bf Operational System} --- The operational system itself.  This will consist of associated hardware acquired for use, operating system images, source code, and deployment instructions, as applicable.
-\item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
-\end{itemize}
+\heading{Task 9: Reports and Publications}
+We will prepare monthly progress reports, the final technical report with SF 298, and the non-proprietary summary report, including all pertinent observations, nature of problems, positive as well as negative results, and design criteria established. We envision that one or more professional conference and journal papers will result from this research. With the customer’s approval, we will publish the research results.
 
 \sbirsection{Related Work}{
 Modus Operandi is highly qualified to successfully perform this effort based on our years of directly related experience in semantic technologies, data fusion, DOD ISR systems, and with enabling technologies such as service-oriented architecture and net-centric computing. AHS Engineering Services and the University of New Mexico's Informatics Lab are renowned for research in information security, information theory, and machine learning.}
@@ -293,9 +301,7 @@ Summarized below are the research projects conducted by AHS Engineering Services
 ~\cite{HeHeShGiJa:11,JaHe:08,JaHeLa:10,JaLaHe:11,LaJaBoNaHe:11,LaJaHeAb:11,LaHe:12,LaHe:13,PaSa:04,PuWe:02,SeKaBe:09,Co:09,Po:12}.
 
 \subsection{State of the Art Related Work}
-The art and science of multisensor data fusion has emerged as the foundation for the development of next generation net-centric decision support systems, including horizontal fusion systems. These decision support systems require the coordination of service-oriented sensors and fusion components. Distributed coordination-based architectures provide a process-to-process communications infrastructure that supports horizontal fusion services. In this paper, the author discusses architectural considerations for distributed service-oriented horizontal fusion including distributed coordination-based architectures, service access, data transformation, adaption, and end-to-end visualization [29].
-
-Machine learning is concerned with the design and development of algorithms that take as input empirical data, from sensors or databases, and yield patterns or predictions thought to be features of the underlying mechanism that generated the data. A major focus of machine learning research is the design of algorithms that recognize complex patterns and make intelligent decisions based on input data. One fundamental difficulty is that the set of all possible behaviors given all possible inputs is too large to be included in the set of observed examples (training data). Hence the learner must generalize from the given examples in order to produce a useful output in new cases [30]. Numerous approaches have been developed ranging from neural network models to more abstract mathematical manipulations which identify numerical similarities. Nevertheless a common theme amongst the varied approaches is that learning techniques incorporate a strategic component to try and yield the best possible decision or classification. The mathematics of game theory formally analyzes strategic interactions between competing players and is consequently quite appropriate to apply to the field of machine learning with potential descriptive as well as functional insights. [7] authors present a game theoretic chip-fire classifier which is an iterated game that is able to perform pattern classification. [10; 11; 12] authors present a graphical-based model for explicit information valuation. The model caters to the subjective nature of information quality by measuring the impact a candidate piece of information may have on a knowledge base representing the recipient's world view. The model is capable of evaluating information semantically at the statement level and is in effect basing information-valuation on information-understanding. However, information value can be computed and predicted using the causal graph model without requiring full logical inference typically needed for information-understanding.
+\fixme{Greg will provide an overview of usage management.  Chris, can you describe state-of-the-art in location services?}
 
 \sbirsection{Relationship with Future Research or Research and Development}{}
 Modus Operandi was founded to address the practical application of innovative technologies. As a result, we are committed to the approach described in this proposal and are enthusiastic about its potential. The results of this program will have a significant influence on the future R\&D performed by Modus Operandi. Our work on data fusion, semantic interoperability, and machine reasoning efforts, such as SMASHUP, Green Wave, Nublu, and ASW F2F, provides an excellent technical foundation for the Phase I effort. Phase I will demonstrate the feasibility of our approach and will lay the groundwork for the Phase II development and transition. Specifically, upon successful completion of Phase I, we will have: (1) identified the critical aspects of our technical approach, (2) demonstrated the proof-of-concept, and (3) constructed a roadmap for application to Air Force initiatives such as AF DCGS (which includes identifying the applicable clearances, certifications, and approvals required to conduct Phase II testing). Collectively, the anticipated results from Phase I will provide a solid foundation for Phase II. In Phase II, we will build the full \hl{<blah blah>} framework and apply it to AF DCGS. Phase III would bring this \hl{<blah blah>} framework to the marketplace (see Commercialization Strategy below).
@@ -506,7 +512,7 @@ No prior, current, or pending support for the proposed work.
  \bibliographystyle{abbrv}
  
  
- \hl{The goal of the research and development effort is to build and demonstrate a software product called Geographically-Aware and Targeted Secure Information Dissemination (GATSID). GATSID will enable on-the-move warfighters, equipped with state-of-the-art wireless information appliances (e.g., handheld, commercially-available or militarized, or wearable computers), to securely send and receive information that can be targeted and tailored for sender-specified geographic regions, sectors, or operating areas. GATSID will enable mobile warfighters to rapidly react to changing battlefield conditions by delivering location-specific time-critical battlefield alerts and advisories. It will implement the following capabilities: 1. A geographically targeted information multicast service that enables an application to securely send data directed at mobile appliances situated within a specified geographic area. The area may be specified graphically (e.g., on a mapping display) or by identification label or geographic coordinates. A minimum of one point with operating radius or two or more points to define outer bounds of the affected area. 2. Range-restricted information dissemination service that delivers data securely to eligible mobile appliances within a given range (say 2 kms) of the information disseminator, where the latter could be a mobile wireless appliance itself. 3. ``Banner in the Sky'' service that allows information to be ``posted'' within a specified geographic region. The posted information is then delivered securely to any eligible fixed or mobile appliance entering the region. 4. Adaptation and customization of delivered information based on user's profile, user's device, and wireless link capacity. In the GATSID concept, the mobile warfighters are equipped with wireless information appliances such as smart phones that support two capabilities: 1) a position location mechanism (e.g., a Global Positioning Satellite [GPS]); and 2) an (Internet Protocol) IP-based wireless interface for connectivity to the military Internet. All communication to and from the mobile appliances is thus accomplished over IP. A non-GPS-equipped device may be referenced for another known GPS-equipped device(s). GATSID will address a major aspect of the challenge of delivering ``On-demand Information: ``What you need \ldots When you need it''. It will enable future situational awareness systems where intelligence and tactical sensor data must be exploited to provide customized, location-specific information to the force. The following paragraphs present example scenarios to illustrate the application of GATSID: Example 1: An unmanned aerial vehicle (UAV) operator performing a reconnaissance mission notices what appears to be a suspicious enemy activity in an area where Special Operations Forces (SOF) operations are ongoing. The pilot can use GATSID to send a targeted warning or alert message to all SOF warfighters in the vicinity of the threat. These warfighters will immediately receive this alert on their mobile appliances and can take necessary actions to counter the threat. Example 2: A first responder to an emergency uses his or her handheld device to broadcast a call for help to medical response teams within a 5 mile radius around the site. All medical 
+ \hl{{\bf The Topic Call:} \\ The goal of the research and development effort is to build and demonstrate a software product called Geographically-Aware and Targeted Secure Information Dissemination (GATSID). GATSID will enable on-the-move warfighters, equipped with state-of-the-art wireless information appliances (e.g., handheld, commercially-available or militarized, or wearable computers), to securely send and receive information that can be targeted and tailored for sender-specified geographic regions, sectors, or operating areas. GATSID will enable mobile warfighters to rapidly react to changing battlefield conditions by delivering location-specific time-critical battlefield alerts and advisories. It will implement the following capabilities: 1. A geographically targeted information multicast service that enables an application to securely send data directed at mobile appliances situated within a specified geographic area. The area may be specified graphically (e.g., on a mapping display) or by identification label or geographic coordinates. A minimum of one point with operating radius or two or more points to define outer bounds of the affected area. 2. Range-restricted information dissemination service that delivers data securely to eligible mobile appliances within a given range (say 2 kms) of the information disseminator, where the latter could be a mobile wireless appliance itself. 3. ``Banner in the Sky'' service that allows information to be ``posted'' within a specified geographic region. The posted information is then delivered securely to any eligible fixed or mobile appliance entering the region. 4. Adaptation and customization of delivered information based on user's profile, user's device, and wireless link capacity. In the GATSID concept, the mobile warfighters are equipped with wireless information appliances such as smart phones that support two capabilities: 1) a position location mechanism (e.g., a Global Positioning Satellite [GPS]); and 2) an (Internet Protocol) IP-based wireless interface for connectivity to the military Internet. All communication to and from the mobile appliances is thus accomplished over IP. A non-GPS-equipped device may be referenced for another known GPS-equipped device(s). GATSID will address a major aspect of the challenge of delivering ``On-demand Information: ``What you need \ldots When you need it''. It will enable future situational awareness systems where intelligence and tactical sensor data must be exploited to provide customized, location-specific information to the force. The following paragraphs present example scenarios to illustrate the application of GATSID: Example 1: An unmanned aerial vehicle (UAV) operator performing a reconnaissance mission notices what appears to be a suspicious enemy activity in an area where Special Operations Forces (SOF) operations are ongoing. The pilot can use GATSID to send a targeted warning or alert message to all SOF warfighters in the vicinity of the threat. These warfighters will immediately receive this alert on their mobile appliances and can take necessary actions to counter the threat. Example 2: A first responder to an emergency uses his or her handheld device to broadcast a call for help to medical response teams within a 5 mile radius around the site. All medical 
 response teams receiving the message can respond back with the ones closest to the site directed to proceed to the emergency scene.
 
 PHASE I: Define, determine feasibility and demonstrate a means to collect and identify potential receiving nodes by class, location, or other means. Provide approach to capture the addresses (all modes) of identified receivers to provide multiple redundant alerts to the selected recipients. Provide demonstration using an accepted geospatial display from Sponsor POC (SPOC) recommended system(s).
