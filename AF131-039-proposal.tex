@@ -137,16 +137,22 @@ Though not completely in scope for this work, nevertheless deployed information 
 \sbirsection{Phase I Technical Objectives}
 {The project challenges motivate our technical objectives.  By meeting these objectives, we will develop a reusable architecture supporting geo-sensitive messaging for engaged warfighters, positioning this project for future phase II work.}
 
-%{Our project objectives are motivated by the ASW F2F challenges. Accomplishing these objectives will result in the development of a methodology, architecture and prototype for the ASW F2F analysis process and will chart a clear course for our Phase II work plan.}
+\paragraph{Objective 1: Device tracking.} Capturing suitable devices for receipt of sensitive broadcast information can take one of two general approaches, depending on the device type.  Devices can use either polling or registration models, either within the supported network stack or via other communications protocols.  The specific mechanism used depends on the class of device receiving messages.  While some devices only have simple IP-based communication available, other more sophisticated devices, like cell phones, may use alternative communication methods as well.
 
-\fxnote{The first objective outline; different types of polling, registration, embedded servers}{
-\paragraph{Objective 1: Device tracking.} ~\\
-- taxonomy of devices \\
-- application level polling and long polling \\
-- application level device registration with incorporated servers \\
-- network level notifications \\
-- how to handle registration spikes?
-}
+Polling models can be further sub-divided into polling and long-polling.  When simply polling, a device repeatedly contacts a known access point and passes required registration information to that access point.  The access point will then pass any information available and suitable for transmission to the requesting client.  The client will poll the access point repeatedly based on some established interval. That interval can change with each request, increasing or decreasing depending on the environmental context.   Long-polling, while superficially similar simple polling, does not close a connection after the initial poll.  The poll operation will block at the access point until any information is available to be transmitted.  When information does become available, it is sent to the client, which then immediately re-polls for additional information.  This essentially repeated registration for single message delivery.  These kinds of systems  pull information from an access point.
+
+Registration models involve messages sent to endpoints known {\sl a priori}.  Registration can occur either at the application level, over the IP protocol, or via other network primitives available on the device.  Application-level registration is very flexible, and involves contacting an access point with information describing how to send messages to the device when required.  This kind of system is more complex than polling systems, but it will decrease the amount of traffic required to send messages to a given device.  In order to implement this kind of system, the client must be able to listen for messages. When implemented over HTTP, for example, this would require an HTTP server be available on the client.  In this case the client would register a URL with an access point.  The access point would then POST suitable messages to the URL associated with the client as those messages become available.  Alternative protocol registration behaves in a similar way, but the initial endpoint registration performed by the client is not over HTTP.  Rather, that initial registration takes advantage of an associated protocol.  Example protocols suitable for this kind of registration include control channel information over 3GPP LTE. Registration-centric systems involve data pushed from the client to the access point, and from the access point back to the client. 
+
+Polling approaches all require an initial request for information, followed by a response.  Long-polling is more efficient that polling, as the response always has content and is never an empty response as long-polling blocks until content is available.  Registration methods use half the bandwidth of polling methods, generally, as information can be repeatedly pushed after a single registration.
+
+The final solution will require some combination of of these approaches, depending on the devices used and the robustness required.  Furthermore, under contrained operational conditions, client devices may need to use peer-based networking in order to effectively register, leading to further decreases in required bandwidth.  Our objective in this context will involve specifically extracting the optimal schemes for initial device registration for specific dynamic conditions, so that the system as a whole can operate as dependably as possible.
+
+%~\\
+%- taxonomy of devices \\
+%- application level polling and long polling \\
+%- application level device registration with incorporated servers \\
+%- network level notifications \\
+%- how to handle registration spikes?
 
 \fxnote{The second objective outline; scaling via p2p comms; is there a third option besides p2p and c/s?}{
 \paragraph{Objective 2: Operating with variable scale.} ~\\
@@ -334,7 +340,7 @@ Summarized below are the research projects conducted by AHS Engineering Services
 
 \subsection{State of the Art Related Work}
 \fixme{Greg will provide an overview of usage management.}
-\fxnote{This section is in progress; desribing IP based geolocation, GPS integration, and GIS systems.}{
+\fxnote{This section is in progress; describing IP based geolocation, GPS integration, and GIS systems.}{
 Current state of the art in location services for mobile device divides into a few distinct classifications.  On one hand, we have typical geolocation of mobile devices based on IP addresses.
 
 Second, we have dedicated GPS systems with network links.
