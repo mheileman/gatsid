@@ -196,12 +196,14 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in the figu
 
 \paragraph{Deliverables}~\\
 We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
+
+\fixme{I'm not sure why this is here.  Is the original list too specific?}{
 \begin{enumerate}
 \item Kickoff meeting within 30 days of contract start.
 \item Progress reports.
 \item Technical review within 6 months.
 \item Final report with SF 298.
-\end{enumerate}
+\end{enumerate}}
 
 Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
 
@@ -214,6 +216,8 @@ Modus Operandi is an experienced and highly capable STTR/SBIR contractor with a 
 \subsection{Task Summary and Schedule}
 The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at facilities in the Department of Electrical and Computer Engineering at the University of New Mexico in Albuquerque, New Mexico.
 
+<<<<<<< HEAD
+=======
 \fixme{These need to match the tasks in the Tasks Details and Technical Approach section - Mark will fix.}
 \begin{itemize}
 \item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
@@ -224,6 +228,7 @@ The proposed Phase I effort is organized into the tasks shown in the Figure~\ref
 \item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
 \end{itemize}
 
+>>>>>>> greg
 \begin{center}
 \fcolorbox{BlueSteel}{Magnum}{
 \begin{minipage}[t]{0.9\textwidth}
@@ -244,8 +249,7 @@ We will hold a kickoff meeting either at the government’s site or at MO headquar
 
 \heading{Task 2: Requirements Extraction}
 The system has a wide requirements domain, stretching from dynamic information usage management to data storage to message delivery schemes. In this task, we will identify and enumerate system requirements, aiming for 90\% requirements coverage overall and 100\% requirements coverage with respect to core Phase I functionality. We will name and describe these requirements in a form suitable for future system development or documentation. This analysis includes identification of Sponsor POC geospatial technology used in future tasking.
-
-The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source. The requirements will be enumerated as well as presented in either use case or user story formats.
+The primary deliverable from this task will be a document describing these requirements such that the requirements can be traced both forward into the actual system and backward to the initial requirements source. The requirements will be enumerated as well as presented in either use case or user story formats.
 
 \heading{Task 3: Establish Approaches and Architectures}
 Capturing nodes suitable for broadcast is a difficult, nuanced problem. A variety of established architectural patterns can be potentially brought to bear on the problem, but they need to be carefully evaluated to ensure they will provide the required levels of service and scalability. In this task, we will outline the potential architectural approaches we can use, describe how and why they are applicable, and address how they could be evaluated for potential production use. We will leverage our established usage management technologies and experience to control information flow based on dynamic environmental context and used devices, extending that technology to seamlessly fit within this specific domain ~\cite{JaLaHe:11,JaLaHe:12}.
@@ -254,15 +258,13 @@ This task will result in the development of a catalog of architectural options i
 
 \heading{Task 4: Evaluate System Architecture Options}
 Building on the catalog established in the previous tasks, we will evaluate outlined technical and architectural approaches with an eye toward identifying common features. We will examine the options available to us and choose the most promising as well as establish how we can establish a common extensible framework in which we can instantiate components embodying various different approaches for future experimentation and comparison.
-
-The outcome of this task is an ordered listing of potential approaches and an architectural outline of a common framework in which we can test the approaches identified.
+The outcome of this task is an ordered listing of potential approaches and an architectural outline of a common framework in which we can test the approaches identified.
 
 \heading{Task 5: System Development}
 During this task we will build a simple framework based on the common architecture identified previously. We will keep the framework as simple as possible, but relevant and applicable to the operational domain. We will also develop components embodying the varied approaches to node capture, information usage management, and information dissemination. We will verify that these components can be loaded into the common framework and run correctly as expected to ease transition into future evaluation tasks.
 
 We will further build upon our cloud engineering experience and in-house infrastructure to develop economical, standards-based systems based around portable system configurations. We will further automate event collection for future reporting using systems deployed in past information-centric data flow research~\cite{LaHe:12b}.
-
-At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives. We will be able to load and run this system using accepted geospatial displays identified in previous tasks with the help of the Sponsor POC.
+At the end of this task we will have source code available that is capable of loading the operational components on demand, as specified by previously identified configuration primitives. We will be able to load and run this system using accepted geospatial displays identified in previous tasks with the help of the Sponsor POC.
 
 \heading{Task 6: System Evaluation}
 At this point, we have established the key system components, developed the initial proof-of-concept technology, and are ready to evaluate various approaches and techniques. We will run the developed system during this task and measure key performance attributes like supportable system load, information delivery times, dropped messages, and appropriate message delivery. During this task, we will run the system and collect experimental results.
@@ -275,6 +277,17 @@ We will develop a preliminary version of the GeoAID system as a proof-of-concept
 
 \heading{Task 9: Reports and Publications}
 We will prepare monthly progress reports, the final technical report with SF 298, and the non-proprietary summary report, including all pertinent observations, nature of problems, positive as well as negative results, and design criteria established. We envision that one or more professional conference and journal papers will result from this research. With the customer’s approval, we will publish the research results.
+
+Specific deliverables from the outlined tasks include:
+
+\begin{itemize}
+\item {\bf Requirements} --- A document listing identified requirements associated with requirement source organized both by list and context via use cases or user stories.
+\item {\bf Architectural Catalog} --- A document describing system architectural options, advantages and disadvantages of those options, and how the they can be evaluated.
+\item {\bf Software Source Code} --- Any and all developed source code, including proofs-of-concept and operational software.  This will also include documentation of the developed software.
+\item {\bf Automated Test Suite} --- An automated test suite covering the system and all developed source code upon which the system is based.
+\item {\bf Operational System} --- The operational system itself.  This will consist of associated hardware acquired for use, operating system images, source code, and deployment instructions, as applicable.
+\item {\bf Final Findings Report} --- A report detailing the specifics of architectural evaluation activities, including information with respect to how the system operates, explanation of any design decisions made with supporting evidence, and guidance for future phase II activities.
+\end{itemize}
 
 \sbirsection{Related Work}{
 Modus Operandi is highly qualified to successfully perform this effort based on our years of directly related experience in semantic technologies, data fusion, DOD ISR systems, and with enabling technologies such as service-oriented architecture and net-centric computing. AHS Engineering Services and the University of New Mexico's Informatics Lab are renowned for research in information security, information theory, and machine learning.}
