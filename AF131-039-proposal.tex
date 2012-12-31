@@ -25,10 +25,10 @@
 %%%%%  Roman numerals for TOC  %%%%%
 \pagenumbering{roman}
 \tableofcontents
- \newpage
+\newpage
  
 %%%%% Set the page number that the main proposal will start on %%%%%%
- \pagenumbering{arabic}
+\pagenumbering{arabic}
  
 \sbirsection{Identification and Significance of the Problem or Opportunity}
 {The Modus Operandi Team proposes to develop geographically-aware assured information dissemination system called GeoAID.  This system will leverage our expertise and ongoing work in the areas of usage management and policy-based assured information sharing in network-centric multilevel security environments. The ability of GeoAID to rapidly and dynamically provide assured information and services to targeted devices within specific geographic regions will produce an information advantage for warfighters, and has direct commercial applicability to the emergency response industry.}
@@ -145,11 +145,27 @@ Though not completely in scope for this work, nevertheless deployed information 
 - application level polling and long polling \\
 - application level device registration with incorporated servers \\
 - network level notifications \\
+- how to handle registration spikes?
 }
 
 \fxnote{The second objective outline; scaling via p2p comms; is there a third option besides p2p and c/s?}{
 \paragraph{Objective 2: Operating with variable scale.} ~\\
 - network and device scale \\
+- naive case broadcasts to every device; how to limit redundant messages over small pipe? how to broadcast efficiently to thousands of devices?\\
+}
+
+\fxnote{The third objective; this is UM focused.}{
+\paragraph{Objective 3: Robust information usage management.} ~\\
+- differential strategies for information distribution
+- p2p modes
+- dynamic routing
+- dynamic information delivery
+}
+
+\fxnote{The fourth objective; ease of use, focused on standards.  Is this needed?}{
+\paragraph{Objective 3: Enhancing the warfighter.} ~\\
+- non-interactive message delivery
+- standards-based messages/systems for ease of system integration
 }
 
 %\fixme{This needs to all be updated with real content and objectives tied back to challenges.}{Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.}
