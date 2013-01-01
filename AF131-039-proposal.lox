@@ -1,8 +1,8 @@
 \contentsline {fixme}{\color {fxfatal}Usage management figure}{3}
+\contentsline {fixme}{\color {fxwarning}Can we keep this?}{4}
 \contentsline {fixme}{\color {fxfatal}Content needed for meeting the challenges}{4}
-\contentsline {fixme}{\color {fxfatal}GeoAID architectural figure}{6}
-\contentsline {fixme}{\color {fxnote}The third objective; this is UM focused.}{6}
-\contentsline {fixme}{\color {fxnote}The fourth objective; ease of use, focused on standards. Is this needed?}{6}
+\contentsline {fixme}{\color {fxfatal}GeoAID architectural figure}{7}
+\contentsline {fixme}{\color {fxwarning}The fourth objective; ease of use, focused on standards. Do we want to keep this? If not we should delete the related challenge also and incorporate the ideas elsewhere.}{7}
 \contentsline {fixme}{\color {fxfatal}Mark will add a work plan sentence here.}{7}
 \contentsline {fixme}{\color {fxfatal}These need to match the tasks in the Tasks Details and Technical Approach section - Mark will fix.}{8}
 \contentsline {fixme}{\color {fxfatal}Add a good agile software development reference}{10}

@@ -128,11 +128,12 @@ Access to information is heavily dependent not only on the person or device requ
 
 Finally, wide availability of high performance computing components and advancing distributed algorithmics are rendering encryption based security approaches weaker and weaker.  Adaptive security systems that can dynamically route or redact sensitive information based on environmental conditions support new ways to protect information in motion.
 
+\fxwarning*{Can we keep this?}{
 \paragraph{Challenge 4: Warfighter Usability.}  Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent cognitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
 
-Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.
+Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.}
 
-\paragraph{Meeting the challenges.}  \fxfatal{Content needed for meeting the challenges}{We need to flesh this out after completing the objectives section.}
+\paragraph{Meeting the challenges.}  \fxfatal*{Content needed for meeting the challenges}{We need to flesh this out after completing the objectives section.}
 
 \sbirsection{Phase I Technical Objectives}
 {The project challenges motivate our technical objectives.  By meeting these objectives, we will develop a reusable architecture supporting geo-sensitive messaging for engaged warfighters, positioning this project for future phase II work.}
@@ -157,15 +158,17 @@ Further issues with scale arise when managing large numbers of registered device
 
 Enabling operation in chaotic environments requires resilient systems capable of configuring themselves in response to changing conditions.  Fulfilling this objective leads to a system that can operate in both hub and spoke and mesh modes as environmental conditions dictate.  This flexibility, when coupled with robust information usage management, provides powerful and dependable geo-sensitive messaging.
 
-\fxnote{The third objective; this is UM focused.}{
-\paragraph{Objective 3: Robust information usage management.} ~\\
-- differential strategies for information distribution \\
-- p2p modes\\
-- dynamic routing\\
-- dynamic information delivery\\
-}
+\paragraph{Objective 3: Robust information usage management.} Information transmitted to registered devices must be secured via a variety of strategies.  Simple encryption based approaches, while necessary, are not sufficient to appropriately secure information.  Likewise, redaction-based schemes can prevent information from delivery to those who need it when then need it if inappropriately applied.
 
-\fxnote{The fourth objective; ease of use, focused on standards.  Is this needed?}{
+Appropriate usage management of included information is vital to maintaining confidentiality of sensitive data, but it must be applied dynamically in order to ensure appropriate information delivery.  Integrated information distribution systems that are able to take into account environmental dynamics as well as user and resource attributes while adhering to the spirit of sensitive data categorization can provide the appropriate level of control over information dissemination and use.
+
+As an example, imagine a scenario in which a message containing specific medical information associated with personnel engaged in an upcoming high-risk operation fixed at a specific point in Afghanistan is placed by an analyst in Virginia.  This message is delivered to all registered and authorized devices within 10 miles of the message fixpoint.  The information in the message is very sensitive for the next 48 hours, after which it will be common knowledge.  Infrastructure between Virginia and Afghanistan is robust and reliable, and the message is secured by encrypted transmission over routes currently known to traverse friendly countries via the public internet.  Once the message arrives in Afghanistan, it is distributed via a mesh network to all appropriately authorized and known secure devices.  In this scenario, the information within the message is managed by the distribution system en route to Afghanistan, first. Here, the usage management system understands the dynamism of routing between Virginia and Afghanistan, and selects appropriately strong encryption as well as safe paths for the initial transmittal.  Once the message arrives in Afghanistan, the usage management system routes the messages to secure devices over secure mesh nodes based on the current conditions on the ground.  Once delivered, the information is restricted for the next 48 hours to specifically authorized personnel, after which it is made available to all registered devices so that they can appropriately support all personnel engaged within the operation.
+
+In this scenario, the data itself is protected and managed at every step of it's transmittal and reception.  The usage of the information in the posted message has multidimensional protection at every step, and the usage of the information is managed after delivery as well.  This kind of responsive and aware usage management enables secure dissemination of dynamic data, providing information to those who need it most.
+
+To meet this objective, we will incorporate our proven distributed usage management technology to provide flexible information protection.  We will incorporate this technology into the system holistically, providing a global umbrella of protection. 
+
+\fxwarning*{The fourth objective; ease of use, focused on standards.  Do we want to keep this? If not we should delete the related challenge also and incorporate the ideas elsewhere.}{
 \paragraph{Objective 4: Enhancing the warfighter.} ~\\
 - non-interactive message delivery\\
 - standards-based messages/systems for ease of system integration\\
