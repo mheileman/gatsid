@@ -128,12 +128,12 @@ Access to information is heavily dependent not only on the person or device requ
 
 Finally, wide availability of high performance computing components and advancing distributed algorithmics are rendering encryption based security approaches weaker and weaker.  Adaptive security systems that can dynamically route or redact sensitive information based on environmental conditions support new ways to protect information in motion.
 
-\fxwarning*{Can we keep this?}{
-\paragraph{Challenge 4: Warfighter Usability.}  Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent cognitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
+%\fxwarning*{Can we keep this?}{
+%\paragraph{Challenge 4: Warfighter Usability.}  Delivering information to and accepting updates from engaged warfighters requires a very small to non-existent cognitive load.  This implies nearly completely automated information collection and delivery systems which enable warfighters to focus on current operations while being able to access information when needed with little to no effort.
+%
+%Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.}
 
-Though not completely in scope for this work, nevertheless deployed information delivery systems must be able to integrate easily from both a technical and operational perspective with deployed systems and personnel.  All developed systems must be able to integrate with sponsor standards to enable this kind of operational integration while supporting other, industry standards supporting technical system integration needs.}
-
-\paragraph{Meeting the challenges.}  \fxfatal*{Content needed for meeting the challenges}{We need to flesh this out after completing the objectives section.}
+\paragraph{Meeting the challenges.}  The developed system will enable global geo-centric messaging by addressing the above challenges while developing required functionality.  The system will enable global message creation, distribution, and geo-sensitive posting based on pre-established coordinates.  By addressing the core technical challenges above, the system will operate securely, resiliently, and at scale.
 
 \sbirsection{Phase I Technical Objectives}
 {The project challenges motivate our technical objectives.  By meeting these objectives, we will develop a reusable architecture supporting geo-sensitive messaging for engaged warfighters, positioning this project for future phase II work.}
@@ -168,11 +168,11 @@ In this scenario, the data itself is protected and managed at every step of it's
 
 To meet this objective, we will incorporate our proven distributed usage management technology to provide flexible information protection.  We will incorporate this technology into the system holistically, providing a global umbrella of protection. 
 
-\fxwarning*{The fourth objective; ease of use, focused on standards.  Do we want to keep this? If not we should delete the related challenge also and incorporate the ideas elsewhere.}{
-\paragraph{Objective 4: Enhancing the warfighter.} ~\\
-- non-interactive message delivery\\
-- standards-based messages/systems for ease of system integration\\
-}
+%\fxwarning*{The fourth objective; ease of use, focused on standards.  Do we want to keep this? If not we should delete the related challenge also and incorporate the ideas elsewhere.}{
+%\paragraph{Objective 4: Enhancing the warfighter.} ~\\
+%- non-interactive message delivery\\
+%- standards-based messages/systems for ease of system integration\\
+%}
 
 %\fxfatal{This needs to all be updated with real content and objectives tied back to challenges.}{Our Phase I objectives focus on defining the ASW F2F methodology and architecture, as well as developing an initial prototype based on the government furnished threat prosecution scenario and dataset to demonstrate the technological foundation needed to support ASW F2F framework development in Phase II and subsequent Phase III commercialization. Since a comprehensive solution to the challenges introduced above is beyond the scope of a single STTR project, our overarching goals are to (1) develop the ASW F2F methodology, (2) design the ASW F2F architecture framework and (3) demonstrate the feasibility of evolving ASW F2F over time through the incorporation of new methods, capabilities and tools. Our specific technical objectives for the Phase I effort are discussed next.}
 
@@ -185,18 +185,17 @@ To meet this objective, we will incorporate our proven distributed usage managem
   \caption{GeoAIDS architectural overview.}\label{GeoAIDarch}
  \end{figure}
 
-\sbirsection{Phase I Work Plan}
-{This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
-\fxfatal{Mark will add a work plan sentence here.}
-
 \newpage 
 \pagestyle{nonproprietary}
+
+\sbirsection{Phase I Work Plan}
+{This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
+
 \paragraph{Phase I Work Plan Outline (Non-proprietary)}
 \paragraph{Scope}~\\
-The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters.  Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by a sponsor POC.  This includes delivery of supporting software code, documentation, and design artifacts.
+The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters. Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by the Government Sponsor Point of Contact (POC). This includes delivery of supporting software code, documentation, and design artifacts.
 
 \paragraph{Task Outline} 
-\fxfatal{These need to match the tasks in the Tasks Details and Technical Approach section - Mark will fix.}
 \begin{enumerate}
 \item {\bf Kickoff Meeting} --- We will conduct a kickoff meeting with the project sponsor within 30 days of contract start.
 \item {\bf Requirements Extraction} --- We will identify and enumerate system requirements, including identification of Sponsor POC geospatial technology.
@@ -219,15 +218,15 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\
 \end{figure}
 
 \paragraph{Deliverables}~\\
-We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
-\begin{enumerate}
+%We expect to have six specific deliverables as a result of this work.  These range from requirements documents to automated test suites to a deployable, operational system.
+\begin{enumerate}[label=\alph*.]
 \item Kickoff meeting within 30 days of contract start.
 \item Progress reports.
 \item Technical review within 6 months.
 \item Final report with SF 298.
 \end{enumerate}
 
-Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
+%Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
 
 \newpage
 \pagestyle{proprietary}
@@ -251,7 +250,7 @@ The proposed Phase I effort is organized into the tasks shown in the Figure~\ref
 \end{center}
 
 \subsection{Task Details and Technical Approach}
-The Modus Operandi Team proposes agile software development for accomplishing the Phase I tasks detailed below. Agile software development is a group of software development methods based on iterative and incremental development, where requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development and delivery, a time-boxed iterative approach, and encourages rapid and flexible response to change. It is a conceptual framework that promotes foreseen interactions throughout the development cycle~\cite{} \fxfatal{Add a good agile software development reference}
+The Modus Operandi Team proposes agile software development for accomplishing the Phase I tasks detailed below. Agile software development is a group of software development methods based on iterative and incremental development, where requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development and delivery, a time-boxed iterative approach, and encourages rapid and flexible response to change. It is a conceptual framework that promotes foreseen interactions throughout the development cycle~\cite{La:03}.
 
 \heading{Task 1: Kickoff Meeting}
 We will hold a kickoff meeting either at the government's site or at MO headquarters, in Melbourne, Florida, based on Government Sponsor Point of Contact (POC) preference. In this meeting we will review the proposed technical approach and statement of work and clarify the research sponsor's technical direction. In order to begin to address specific system needs, the team will assemble a coarsely grained Concept of Operations document that describes how the system should work. This will be a living document and will be updated regularly while the team executes other specific tasks. 
@@ -342,17 +341,13 @@ Summarized below are the research projects conducted by AHS Engineering Services
 
 \subsection{State of the Art Related Work}
 \fxfatal{Greg will provide an overview of usage management.}
-\fxnote{This section is in progress; describing IP based geolocation, GPS integration, and GIS systems.}{
-Current state of the art in location services for mobile device divides into a few distinct classifications.  On one hand, we have typical geolocation of mobile devices based on IP addresses.
+Current state of the art in location services for mobile device divides into a few distinct classifications.  On one hand, we have typical geolocation of mobile devices based on IP addresses.  These approaches use tables of IP address ranges and other associated information to provide location services to subscribers via regional internet registries~\cite{AIRN:13,RIPE:13}.  This information can be retrieved via standard programming interfaces defined by the World Wide Web Consortium (W3C)~\cite{w3c:13} supported by concrete implementations provided by a variety of browser implementations ~\cite{firefox:13,Pi:13}.  In these cases, developers use the standard interfaces which invoke browser native concrete implementations that retrieve information from internet registries to locate individuals.  This kind of functionality exists for modern browsers on workstation-grade systems as well as many mobile platforms~\cite{safari:13,opera:13}.
 
-Second, we have dedicated GPS systems with network links.
+On the other, we have dedicated GPS systems with network links.  These kinds of systems are embodied by various platform mapping applications~\cite{gmap:13,amap:13} common on mobile platforms.  Apple's iPhone, for example currently offers assisted GPS services that use GPS information transmitted from satellites as well as cellular and other network sources to locate devices~\cite{amap:13}.  Though any of these systems can be used in device-to-device communication in a distributed internet-of-things, GPS-equipped units are more common as they can provide higher levels of geo-location granularity.
 
-Though any of these systems can be used in device-to-device communication in a distributed internet-of-things, GPS-equipped units are more common as they can provide higher levels of geo-location granularity.
+Finally, bringing this information together, we have data solutions like those embodied by Google Earth and ESRI products like ArcGIS~\cite{esri:13,gearth:13}.  Both GPS-based and IP address-centric geolocation techniques can integrate with these kinds of data solutions into a single, unified system.  With that in mind however, these kinds of geographic information systems do not provide messaging functionality directly, nor do they implicitly support it.  They can be leveraged as components to provide integrated solutions.
 
-Finally, bringing this information together, we have data solutions like those embodied by Google Earth and ESRI products like ArcGIS.
-}
-
-\fxfatal{Is this real content for this proposal? I attempted to pull this into this document on a merge.}{
+\fxfatal*{Is this real content for this proposal? I attempted to pull this into this document on a merge.}{
 The art and science of multisensor data fusion has emerged as the foundation for the development of next generation net-centric decision support systems, including horizontal fusion systems. These decision support systems require the coordination of service-oriented sensors and fusion components. Distributed coordination-based architectures provide a process-to-process communications infrastructure that supports horizontal fusion services. In this paper, the author discusses architectural considerations for distributed service-oriented horizontal fusion including distributed coordination-based architectures, service access, data transformation, adaption, and end-to-end visualization [29].
 
 Machine learning is concerned with the design and development of algorithms that take as input empirical data, from sensors or databases, and yield patterns or predictions thought to be features of the underlying mechanism that generated the data. A major focus of machine learning research is the design of algorithms that recognize complex patterns and make intelligent decisions based on input data. One fundamental difficulty is that the set of all possible behaviors given all possible inputs is too large to be included in the set of observed examples (training data). Hence the learner must generalize from the given examples in order to produce a useful output in new cases [30]. Numerous approaches have been developed ranging from neural network models to more abstract mathematical manipulations which identify numerical similarities. Nevertheless a common theme amongst the varied approaches is that learning techniques incorporate a strategic component to try and yield the best possible decision or classification. The mathematics of game theory formally analyzes strategic interactions between competing players and is consequently quite appropriate to apply to the field of machine learning with potential descriptive as well as functional insights. [7] authors present a game theoretic chip-fire classifier which is an iterated game that is able to perform pattern classification. [10; 11; 12] authors present a graphical-based model for explicit information valuation. The model caters to the subjective nature of information quality by measuring the impact a candidate piece of information may have on a knowledge base representing the recipient's world view. The model is capable of evaluating information semantically at the statement level and is in effect basing information-valuation on information-understanding. However, information value can be computed and predicted using the causal graph model without requiring full logical inference typically needed for information-understanding.
