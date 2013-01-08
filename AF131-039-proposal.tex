@@ -13,7 +13,7 @@
 \company{Modus Operandi}
 \proposaltitle{GeoAID: Geographically-aware Assured Information Dissemination}
 \topicnum{AF131-039}
-\proposalnum{AF131-039-0xxx}
+\proposalnum{F131-039-0974}
 \proposaltype{SBIR Phase I Proposal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -65,13 +65,14 @@
 \end{evalbox}
 
 \paragraph{Executive Summary}
-\paragraph{The Problem.} The goal of this research and development effort is to build a system that addresses the Geographically-Aware and Targeted Secure Information Dissemination (GATSID) problem. In the GATSID problem, the warfighter is assumed to possess an IP-based wireless device (or set of devices) that may connect to the military Internet. Furthermore, some collection of the devices associated with the network are assumed to support position location capabilities via GPS. Given these assumptions, the goal is to build a system that ``will enable on-the-move warfighters \ldots to securely send and receive information that can be targeted and tailored for sender-specified regions, sectors, or operating areas~\cite{AF131-039}.'' Given such a system, there are numerous scenarios (some of which are described below) where its capabilities could be leveraged to provide a distinct information advantage to the warfighter in the field.
+\paragraph{The Problem.} The goal of this research and development effort is to build a system that addresses the Geographically-Aware and Targeted Secure Information Dissemination (GATSID) problem. In the GATSID problem, the warfighter is assumed to possess an Internet Protocol (IP)-based wireless device (or set of devices) that may connect to the military Internet. Furthermore, some collection of the devices associated with the network are assumed to support position location capabilities via Global Positioning System (GPS). Given these assumptions, the goal is to build a system that ``will enable on-the-move warfighters \ldots to securely send and receive information that can be targeted and tailored for sender-specified regions, sectors, or operating areas~\cite{AF131-039}.'' Given such a system, there are numerous scenarios (some of which are described below) where its capabilities could be leveraged to provide a distinct information advantage to the warfighter in the field.
 
 However, there are numerous difficulties with this approach that must be accounted for by any system deployed to address the GATSID problem. Most importantly, all advantages to the warfighter may be lost if information is not delivered in a provably assured manner. Indeed, we can easily conceive of mission scenarios where opposing forces actually gain strategic advantage due to information leakage associated with an improperly designed location-based dissemination system. It would not be difficult to build a system that addresses the GATSID problem if we could hold all aspects of the operating and mission environments constant. In this case, a set of rules for how and when information should be delivered to whom could be enumerated and exhaustively validated. The reality, however, is that military network environments are constantly changing in ways that cannot be anticipated, and no two mission environments are the same. Thus, an architectural framework that is overly rigid will lead to a system that cannot be easily adapted or scaled to address future needs. It is not uncommon for the complexity of such systems to grow over time, leading to a security situation that becomes increasingly more difficult to manage.
 
 \paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi, Inc. (MO) and AHS Engineering Services (AHS), proposes to design, prototype, and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem. The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
 
 \paragraph{Our Approach.} Our approach to developing the GeoAID is to leverage two critical information integration technologies, usage management and \hl{... focusing on the specific threat prosecution test case and dataset to be provided as GFI in Phase I.}
+\fxfatal{Mark, finish Our Approach.}
 
 \paragraph{Vision and End-State.} The end state of our Phase I research project will be the production of the GeoAID architecture and initial prototype that demonstrate the feasibility of our approach for success during Phases II and III. \hl{The methodology and prototype will be developed to support  the threat prosecution scenario provided by the government, in which we will demonstrate how operators configure the model to support their missions using the Operator's Tool. We will perform initial tests using the scenario data and measure results based on the usability and detect-to-engagement metrics. Finally, the \hl{gizmo} requirements, design, tool concept and metrics will be revised based on customer feedback. All results will be reported in the Final Technical Report and summarize in the Final Summary Report.
 Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can be integrated into the Air Force's  \hl{<blah blah>}. The specific products we propose to produce in Phase I, include:}
@@ -93,6 +94,7 @@ Our vision is to develop an intuitive, high-value \hl{gizmo} framework that can 
  \item Required CDRLs, reports, and reviews, as well as professional publications.
 \end{itemize}
 }
+\fxfatal{Mark, finish Vision and End-State.}
 
 \paragraph{Background and Need}~\\
 On the move warfighters require access to relevant, geo-tagged information. This information must be delivered to devices including handheld multi-function computers, either commercially available or militarized, or wearable computational systems incorporating novel user interface schemes.
@@ -101,7 +103,7 @@ On the move warfighters require access to relevant, geo-tagged information. This
   \centerline{\includegraphics[width=5.5in]{./images/UM-highlevel.pdf}}
   \caption{A high level depiction of the usage management framework.}
   \label{UM-highlevel}
- \end{figure}
+ \end{figure} \fxfatal{Need graphic artist to provide appropriate graphic.}
 
 \sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery. This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly. Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
 
@@ -128,15 +130,15 @@ The final solution will require some combination of of these approaches, dependi
 
 To fulfill this objective, the system itself will be designed to handle messaging at internet scale~\cite{LiPoClGePrNuRo:12,LlFrKaAn:11,KrPaFrMa:12}, transmitting information based on either geographic coordinates or established tags translatable into a specific area of interest. Geographic coordinate transmission will support either radial specification, circumference inference based on a known area diameter, or polygons based on defined verticies. We furthermore propose to implement customization schemes to allow selective transmission within a defined area so that only select devices receive messages based on both dynamic, environmental information and static, characteristics known {\sl a priori}.
 
-\paragraph{Objective 2: Radial broadcast.} Just as messages will be pushed to registered devices from remote locations, they must be able to be broadcast to devices within an area from that area as well. Two common message-based architectures supporting these kinds of communication needs are hub-and spoke and mesh systems. 
+\paragraph{Objective 2: Radial broadcast.} Just as messages will be pushed to registered devices from remote locations, they must be able to be broadcast to devices within an area from that area as well. Two common message-based architectures supporting these kinds of communication needs are hub-and-spoke and mesh systems.
 
-In hub and spoke systems, a single service point supports multiple clients. These systems are easy to support and maintain, and straightforward to trace information through. Information travels in a single hop from an access point to a client, with no intermediary. Service functionality is clearly separated from client functionality as well.
+In hub-and-spoke systems, a single service point supports multiple clients. These systems are easy to support and maintain, and straightforward to trace information through. Information travels in a single hop from an access point to a client, with no intermediary. Service functionality is clearly separated from client functionality as well.
 
 Mesh architectures blend the boundaries between client systems and service providers. In these configurations, clients can register with and receive information from access points or from nearby peers. This kind of peer-to-peer communication would be hosted over IP at the application layer, and would serve to allow lower power devices access to GeoAID as well as potentially decrease the bandwidth requirements of transmitted messages. The disadvantages of using this kind of configuration include additional client-side software complexity, non-deterministic message routing, and increased potential information exposure. Clients must be capable of hosting and consuming services, leading to higher support requirements. Furthermore, messages routed from peer system to peer system can be traced by logging system receipt but the number of hops is generally greater than one and is essentially unbounded unless an artificial hop limit is imposed. These longer paths of transit for information lead to increased potential exposure as a direct function of path length.
 
 Furthermore, in meeting this objective, the system will be designed to provide a guarantee of eventual consistency~\cite{LiPoClGePrNuRo:12}. As a result, we need not route every message through a centralized message hub. Rather, we can stage hierarchical intermediary hubs capable of transmitting messages as well as supplying some form of peer-to-peer mesh. This provides additional resiliency to the system via multiple secure routes of message transmittal. It also takes advantage of locality with transmissions within a given area. Because of message staging and mesh availability, the system can transmit information to nearby nodes first, and other more distant nodes as the message traverses the hub hierarchy.
 
-Enabling operation in chaotic environments requires resilient systems capable of configuring themselves in response to changing conditions. Fulfilling this objective leads to a system that can operate in both hub and spoke and mesh modes as environmental conditions dictate. This flexibility, when coupled with robust information usage management, provides powerful and dependable geo-sensitive messaging.
+Enabling operation in chaotic environments requires resilient systems capable of configuring themselves in response to changing conditions. Fulfilling this objective leads to a system that can operate in both hub-and-spoke and mesh modes as environmental conditions dictate. This flexibility, when coupled with robust information usage management, provides powerful and dependable geo-sensitive messaging.
 
 \paragraph{Objective 3: Fixed, geo-aware messages.} Unlike multicast and broadcast messages that are only submitted and delivered once (albeit to many devices), fixed messages are established once and delivered many times. These messages may have a fixed lifetime, after which they are no longer broadcast, or they may be broadcast indefinitely until manually removed. Furthermore, these fixed messages require the system to recognize when a new device enters that message's region of transmittal, initiating message delivery to that device.
 
@@ -144,9 +146,9 @@ This capability will take advantage of both secure broadcast and multicast infra
 
 Further issues with scale arise when managing large numbers of registered devices and fixed submitted messages. Data systems supporting fixed geo-located messaging must be able to process large numbers of registered client devices and fixed messages. Timely delivery of messages delivered to a specific geographic area of interest at large scale requires advanced concurrent algorithmics capable of processing large numbers of similar data objects. MapReduce algorithms fit this kind of scenario nicely, and would support the global scale required of this system. Our proposed hierarchical staging approach also provides the ability to store messages close to the posted area of interest of a message, further increasing transmittal performance.
 
-\paragraph{Objective 4: Robust information usage management.} Information transmitted to registered devices must be secured via a variety of strategies. Simple encryption based approaches, while necessary, are not sufficient to appropriately secure information. Likewise, redaction-based schemes can prevent information from delivery to those who need it when then need it if inappropriately applied.
+\paragraph{Objective 4: Robust information usage management.} Information transmitted to registered devices must be secured via a variety of strategies. Simple encryption based approaches, while necessary, are not sufficient to appropriately secure information. Likewise, redaction-based schemes can prevent information from delivery to those who need it, when they need it, if inappropriately applied.
 
-Appropriate usage management of included information is vital to maintaining confidentiality of sensitive data, but it must be applied dynamically in order to ensure appropriate information delivery. Integrated information distribution systems that are able to take into account environmental dynamics as well as user and resource attributes while adhering to the spirit of sensitive data categorization can provide the appropriate level of control over information dissemination and use.
+Appropriate usage management of included information is vital to maintaining confidentiality of sensitive data, but it must be applied dynamically in order to ensure appropriate information delivery. Integrated information distribution systems that are able to take into account environmental dynamics as well as user and resource attributes while adhering to the intent of sensitive data categorization can provide the appropriate level of control over information dissemination and use.
 
 As an example, imagine a scenario in which a message containing specific medical information associated with personnel engaged in an upcoming high-risk operation fixed at a specific point in Afghanistan is placed by an analyst in Virginia. This message is delivered to all registered and authorized devices within 10 miles of the message fixpoint. The information in the message is very sensitive for the next 48 hours, after which it will be common knowledge. Infrastructure between Virginia and Afghanistan is robust and reliable, and the message is secured by encrypted transmission over routes currently known to traverse friendly countries via the public internet. Once the message arrives in Afghanistan, it is distributed via a mesh network to all appropriately authorized and known secure devices. In this scenario, the information within the message is managed by the distribution system en route to Afghanistan, first. Here, the usage management system understands the dynamism of routing between Virginia and Afghanistan, and selects appropriately strong encryption as well as safe paths for the initial transmittal. Once the message arrives in Afghanistan, the usage management system routes the messages to secure devices over secure mesh nodes based on the current conditions on the ground. Once delivered, the information is restricted for the next 48 hours to specifically authorized personnel, after which it is made available to all registered devices so that they can appropriately support all personnel engaged within the operation.
 
@@ -155,13 +157,11 @@ In this scenario, the data itself is protected and managed at every step of it's
 To meet this objective, we will incorporate our proven distributed usage management technology~\cite{HeHeShGiJa:11,JaHeLa:10,JaLaHe:11} to provide flexible information protection. We will incorporate this technology into the system holistically, providing a global umbrella of protection.
 
 \begin{figure}
- \vspace{1in}
- \begin{center}
-  $<$ A compelling high-level architectural graphic will go here $>$
-  \end{center}\fxfatal{GeoAID architectural figure}
- \vspace{1in}
-  \caption{GeoAIDS architectural overview.}\label{GeoAIDarch}
+  \centerline{\includegraphics[width=6in]{./images/UM-highlevel.pdf}}
+  \caption{GeoAID architectural overview.}
+\label{GeoAIDarch}
  \end{figure}
+\fxfatal{Need GeoAID architectural figure from graphic artist.}
 
 \sbirsection{Phase I Work Plan}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
@@ -171,11 +171,11 @@ To meet this objective, we will incorporate our proven distributed usage managem
 
 \paragraph{Phase I Work Plan Outline (Non-proprietary)}
 \paragraph{Scope}~\\
-The scope of this work is to build and deploy a system incorporating advanced usage management technology to securely delivery battlefield geo-aware updates to mobile warfighters. Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by the Government Sponsor Point of Contact (POC). This includes delivery of supporting software code, documentation, and design artifacts.
+The scope of this work is to research and develop a system incorporating advanced usage management technology to securely deliver battlefield geo-aware updates to mobile warfighters. Phase I work specifically addresses delivery a of a system capable of capturing eligible nodes and delivering appropriate messages to those nodes displayable on a geospatial display selected by the Government Sponsor Point of Contact (POC). %This includes delivery of supporting software code, documentation, and design artifacts.
 
 \paragraph{Task Outline} 
 \begin{enumerate}
-\item {\bf Kickoff Meeting}---We will conduct a kickoff meeting with the project sponsor within 30 days of contract start.
+\item {\bf Kickoff Meeting}---We will conduct a kickoff meeting with the Sponsor POC within 30 days of contract start.
 \item {\bf Requirements Extraction}---We will identify and enumerate system requirements, including identification of Sponsor POC geospatial technology.
 \item {\bf Establish Approaches and Architectures}---We will develop a catalog of architectural options including descriptions of the approaches and their advantages and disadvantages.
 \item {\bf Evaluate System Architecture Options}---We will examine the architecture options available and choose the most promising, as well as establish how a common extensible framework in which we can instantiate components embodying various approaches for future experimentation and comparison.
@@ -187,7 +187,7 @@ The scope of this work is to build and deploy a system incorporating advanced us
 \end{enumerate}
 
 \paragraph{Milestone Schedule}~\\
-The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\ref{Gantt}. The majority of the primary research will be accomplished during the first six months of the Phase I SBIR project. The last three months will provide project continuity to Phase II. Work will be performed at MO?s headquarters located in Melbourne, Florida, and at AHS Engineering Services facilities in Albuquerque, New Mexico.
+The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\ref{Gantt}. The majority of the primary research will be accomplished during the first six months of the Phase I SBIR project. The last three months will provide project continuity to Phase II. Work will be performed at MO's headquarters located in Melbourne, Florida, and at AHS Engineering Services facilities in Albuquerque, New Mexico.
 
 \begin{figure}[h]
  \centerline{\includegraphics[width=5in]{./images/Gantt.png}}
