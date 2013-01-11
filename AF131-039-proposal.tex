@@ -29,10 +29,19 @@
  
 %%%%% Set the page number that the main proposal will start on %%%%%%
 \pagenumbering{arabic}
- 
+\pagestyle{proprietary}
+
+
+\cfoot{
+{\color{LeTigre}\vspace*{-1.1in}{\it\small{This proposal includes data that shall not be disclosed outside the Government and shall not be duplicated, used, or disclosed-in whole or in part-for any purpose other than to evaluate this proposal. If, however, a contract is awarded to this offeror as a result of-or in connection with-the submission of this data, the Government shall have the right to duplicate, use, or disclose the data to the extent provided in the resulting contract. This restriction does not limit the Government's right to use information contained in this data if it is obtained from another source without restriction. The data subject to this restriction are contained in pages 1-XX and XX-20.}~\\
+\scshape\fromproposaltitle}~\\ \rm\thepage }
+}
+
 \sbirsection{Identification and Significance of the Problem or Opportunity}
 {The Modus Operandi Team proposes to develop geographically-aware assured information dissemination system called GeoAID. This system will leverage our expertise and ongoing work in the areas of usage management and policy-based assured information sharing in network-centric multilevel security environments. The ability of GeoAID to rapidly and dynamically provide assured information and services to targeted devices within specific geographic regions will produce an information advantage for warfighters, and has direct commercial applicability to the emergency response industry.}
  
+\thispagestyle{pageone}
+
 %%%%%  Evaluation Criteria box, use \begin{evalbox} \end{evalbox}, \evalhdr, \begin{evalitemize}, and \end{evalitemize}  %%%%% 	
 \begin{evalbox}
 \evalhdr{Innovative:}
@@ -69,6 +78,10 @@
 
 However, there are numerous difficulties with this approach that must be accounted for by any system deployed to address the GATSID problem. Most importantly, all advantages to the warfighter may be lost if information is not delivered in a provably assured manner. Indeed, we can easily conceive of mission scenarios where opposing forces actually gain strategic advantage due to information leakage associated with an improperly designed location-based dissemination system. It would not be difficult to build a system that addresses the GATSID problem if we could hold all aspects of the operating and mission environments constant. In this case, a set of rules for how and when information should be delivered to whom could be enumerated and exhaustively validated. The reality, however, is that military network environments are constantly changing in ways that cannot be anticipated, and no two mission environments are the same. Thus, an architectural framework that is overly rigid will lead to a system that cannot be easily adapted or scaled to address future needs. It is not uncommon for the complexity of such systems to grow over time, leading to a security situation that becomes increasingly more difficult to manage.
 
+\clearpage
+\cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage~\\ 
+\it{Use or disclosure of data contained on this page is subject to the restriction on the first page of this volume.}}
+
 \paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi, Inc. (MO) and AHS Engineering Services (AHS), proposes to design, prototype, and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem. The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
 
 \paragraph{Our Approach.} Our approach to developing the GeoAID is to leverage two critical information integration technologies, usage management and \hl{... focusing on the specific threat prosecution test case and dataset to be provided as GFI in Phase I.}
@@ -103,7 +116,7 @@ On the move warfighters require access to relevant, geo-tagged information. This
   \centerline{\includegraphics[width=5.5in]{./images/UM-highlevel.pdf}}
   \caption{A high level depiction of the usage management framework.}
   \label{UM-highlevel}
- \end{figure}
+ \end{figure} \fxfatal{Need graphic artist to provide appropriate graphic.}
 
 \sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery. This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly. Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
 
@@ -157,16 +170,19 @@ In this scenario, the data itself is protected and managed at every step of it's
 To meet this objective, we will incorporate our proven distributed usage management technology~\cite{HeHeShGiJa:11,JaHeLa:10,JaLaHe:11} to provide flexible information protection. We will incorporate this technology into the system holistically, providing a global umbrella of protection.
 
 \begin{figure}
-  \centerline{\includegraphics[width=6in]{./images/GeoAIDarch.png}}
+  \centerline{\includegraphics[width=6in]{./images/UM-highlevel.pdf}}
   \caption{GeoAID architectural overview.}
 \label{GeoAIDarch}
  \end{figure}
+\fxfatal{Need GeoAID architectural figure from graphic artist.}
 
 \sbirsection{Phase I Work Plan}
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
 
 \newpage 
-\pagestyle{nonproprietary}
+\lfoot{}
+\chead{\color{LeTigre}~\\ Topic No: \fromtopicnum}
+\cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage}
 
 \paragraph{Phase I Work Plan Outline (Non-proprietary)}
 \paragraph{Scope}~\\
@@ -174,6 +190,7 @@ The scope of this work is to research and develop a system incorporating advance
 
 \paragraph{Task Outline} 
 \begin{enumerate}
+\vspace{-0.1in}
 \item {\bf Kickoff Meeting}---We will conduct a kickoff meeting with the Sponsor POC within 30 days of contract start.
 \item {\bf Requirements Extraction}---We will identify and enumerate system requirements, including identification of Sponsor POC geospatial technology.
 \item {\bf Establish Approaches and Architectures}---We will develop a catalog of architectural options including descriptions of the approaches and their advantages and disadvantages.
@@ -196,6 +213,7 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\
 
 \paragraph{Deliverables}
 \begin{enumerate}[label=\alph*.] 
+\vspace{-0.1in}
 \item Kickoff meeting within 30 days of contract start.
 \item Progress reports.
 \item Technical review within 6 months.
@@ -205,7 +223,10 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\
 %Our work plan is fully responsive to the requirements stated in the AF131-039 topic. By producing a working proof-of-concept prototype, we will in fact achieve more than the requirements of the topic.
 
 \newpage
-\pagestyle{proprietary}
+\lfoot{\color{LeTigre}\scshape{Proprietary}}
+\chead{\color{LeTigre}\scshape{Proprietary}~\\ Topic No: \fromtopicnum}
+\cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage~\\ 
+\it{Use or disclosure of data contained on this page is subject to the restriction on the first page of this volume.}}
 
 \subsection{Key Aspects and Innovation}
 Modus Operandi is an experienced and highly capable SBIR/STTR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. The University of New Mexico is a Carnegie Very High Research Activity University, and the Informatics Research Group is highly experienced in the areas of machine learning and hybrid intelligent systems. Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
@@ -382,11 +403,12 @@ Within these overall market segments, relevant niche markets for Modus Operandi 
    ESC, Marine Corps, CECOM and		&						&						&  and CPP fund onrelated Phase II \\
    PEO IEW\&S)						&						&						& SBIRs with USAF and    Army.       \\ \hline
    Modus Operandi IR\&D Investment	&		2012-2015		& 		\$250K			& Estimated funds from additional \\
-   								&						&						&  ModusOperandi IR\&D investment.    \\ \hline
+   								&						&						&  ModusOperandi IR\&D invest-    \\ 
+								&						&						& ment. 						\\ \hline
    Additional Phase II/III 3rd-Party		&		2015-2016		&		\$2-3M			& Anticipated from early adopters         \\
-   Investment						&						&						& and business partners.					\\ \hline
+   Investment						&						&						& and business partners.			\\ \hline
    Ramp-up Period Revenue			&		2016-2017		&	\$500K increasing 		& A 2-year ramp-up is projected. 		\\ 
-   								&						& 	to \$3M annually		&								\\ \hline
+   								&						& 	to \$3M annually		&							\\ \hline
    Full Scale Sales \& Marketing			&		2018 and 			& 	\$3+M annually			& Based on direct sales and co- \\
    								& 		beyond			&	out of \$20M total		& marketing initiatives. See          \\
 								&						&						& assumptions below.	\\ \hline

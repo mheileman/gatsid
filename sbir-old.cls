@@ -47,7 +47,6 @@
 \RequirePackage{ifthen}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
-\RequirePackage{extramarks}
 \RequirePackage{enumitem}
 \RequirePackage{wrapfig}
 \RequirePackage{amssymb}
@@ -96,20 +95,27 @@
 \company{}\proposaltitle{}\topicnum{}\proposalnum{}\proposaltype{}
 
 %%%% Information that goes in the header and footer  %%%  
-\fancypagestyle{proprietary}{
+\newcommand{\ps@proprietary}{
+  \pagestyle{fancy}
   \lhead{\color{LeTigre}\scshape\fromcompany}
   \chead{\color{LeTigre}\scshape{Proprietary}~\\ Topic No: \fromtopicnum}
   \rhead{\color{LeTigre}Proposal No: \fromproposalnum}
   \lfoot{\color{LeTigre}\scshape{Proprietary}}
-  \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage~\\
-  		\it{Use or disclosure of data contained on this page is subject to the restriction on the first page of this volume.}}
+  \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage}
   \rfoot{\color{LeTigre}\scshape\fromproposaltype}
 }
 
-%%%% page style for page one %%%  
-\newcommand{\ps@pageone}{
-%  \thispagestyle{empty}
-  \setlength{\textheight}{7.9in} 
+\pagestyle{proprietary}
+  
+%%%%  page style for nonproprietary page  %%%%
+\newcommand{\ps@nonproprietary}{
+  \pagestyle{fancy}
+  \lhead{\color{LeTigre}\scshape\fromcompany}
+  \chead{\color{LeTigre}\scshape{}~\\ Topic No: \fromtopicnum}
+  \rhead{\color{LeTigre}Proposal No: \fromproposalnum}
+  \lfoot{\color{LeTigre}\scshape{}}
+  \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage}
+  \rfoot{\color{LeTigre}\scshape\fromproposaltype}  
 }
 
 %%% New counters %%%
