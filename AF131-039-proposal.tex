@@ -38,8 +38,6 @@
 
 \sbirsection{Identification and Significance of the Problem or Opportunity}
 {The Modus Operandi Team proposes to develop geographically-aware assured information dissemination system called GeoAID. This system will leverage our expertise and ongoing work in the areas of usage management and policy-based assured information sharing in network-centric multilevel security environments. The ability of GeoAID to rapidly and dynamically provide assured information and services to targeted devices within specific geographic regions will produce an information advantage for warfighters, and has direct commercial applicability to the emergency response industry.}
- 
-\thispagestyle{pageone}
 
 %%%%%  Evaluation Criteria box, use \begin{evalbox} \end{evalbox}, \evalhdr, \begin{evalitemize}, and \end{evalitemize}  %%%%% 	
 \begin{evalbox}
@@ -83,7 +81,7 @@ However, there are numerous difficulties with this approach that must be account
 
 \paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi, Inc. (MO) and AHS Engineering Services (AHS), proposes to design, prototype, and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem. The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
 
-\paragraph{Our Approach.} The proposed research addresses the problem described above by logically separating security policies from security implementations within the network. This approach is vital if the true capabilities of GATSID are to be realized in DoD environments. In a DoD setting there will be multiple missions currently interacting with the network infrastructure, and the proposed framework will allow each mission to do so according to the current security policy. Our approach will leverage our work in policy-based usage management. Figure~\ref{UM-highlevel} provides a high level view of our usage management framework. The key elements to note in this figure are the policy-based nature of our approach, the manner in which usage policy is given meaning via an ontology, and the fact that usage policy is always interpreted relative to the current context of the user. More specifically, on the left side of this figure, in Domain A, usage policy is first transformed into a license, using the ontology that has been defined for the particular usage management environment that the system will be operating in. Next, the license is bound to a particular resource, and this bundle is the element that is then made available for usage-managed sharing in other domains.
+\paragraph{Our Approach.} The proposed research addresses the problem described above by logically separating security policies from security implementations within the network. This approach is vital if the true capabilities of GATSID are to be realized in DoD environments. In a DoD setting there will be multiple missions currently interacting with the network infrastructure, and the proposed framework will allow each mission to do so according to the current security policy. Our approach will leverage our work in policy-based usage management. Figure~\ref{conops} provides a high level view of the GeoAID concept of operations. The key elements to note in this figure are the policy-based nature of our approach, the manner in which usage policy is given meaning via an ontology, and the fact that usage policy is always interpreted relative to the current context of the user. More specifically, on the left side of this figure, in Domain A, usage policy is first transformed into a license, using the ontology that has been defined for the particular usage management environment that the system will be operating in. Next, the license is bound to a particular resource, and this bundle is the element that is then made available for usage-managed sharing in other domains.
 
 \paragraph{Vision and End-State.} The end state of our Phase I research project will be the production of the GeoAID architecture and initial prototype that demonstrate the feasibility of our approach for success during Phases II and III. Specifically we will demonstrate a means to collect and identify potential receiving nodes by class, location, or other means. The Technology Readiness Level (TRL) will be established at the conclusion of Phase I.
 
@@ -91,11 +89,18 @@ However, there are numerous difficulties with this approach that must be account
 On the move warfighters require access to relevant, geo-tagged information. This information must be delivered to devices including handheld multi-function computers, either commercially available or militarized, or wearable computational systems incorporating novel user interface schemes.
 
 \begin{figure}
-  \centerline{\includegraphics[width=5.5in]{./images/UM-highlevel.pdf}}
-  \caption{A high level depiction of the usage management framework.}
-  \label{UM-highlevel}
- \end{figure}
+  \centerline{\includegraphics[width=6in]{./images/conops-gatsid.png}}
+  \caption{The concept of operations for the GeoAID system.}
+  \label{conops}
+\end{figure}
 
+%\begin{figure}
+%  \centerline{\includegraphics[width=5.5in]{./images/UM-highlevel.pdf}}
+%  \caption{A high level depiction of the usage management framework.}
+%  \label{UM-highlevel}
+% \end{figure}
+
+~\\
 \sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery. This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly. Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
 
 This kind of information can include textual data, video, audio, or any other kind of required data displayable on a range of devices within any number of applications, and will be  delivered to sender-specified geographic points or areas. Devices are associated with specific geographic locations, and can receive messages that are pushed to them as needed, or statically posted at a specific region or point. The system must support this kind of functionality globally, and maintain high performance under chaotic operational conditions.
@@ -153,9 +158,6 @@ To meet this objective, we will incorporate our proven distributed usage managem
 %\label{GeoAIDarch}
 % \end{figure}
 
-\sbirsection{Phase I Work Plan}
-{This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
-
 \newpage 
 \lfoot{}
 \chead{\color{LeTigre}~\\ Topic No: \fromtopicnum}
@@ -204,6 +206,9 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\
 \chead{\color{LeTigre}\scshape{Proprietary}~\\ Topic No: \fromtopicnum}
 \cfoot{\color{LeTigre}\vspace*{-1.25em}{\scshape\fromproposaltitle}~\\ \rm\thepage~\\ 
 \it{Use or disclosure of data contained on this page is subject to the restriction on the first page of this volume.}}
+
+\sbirsection{Phase I Work Plan}
+{This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
 
 \subsection{Key Aspects and Innovation}
 Modus Operandi is an experienced and highly capable SBIR/STTR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. \hl{The University of New Mexico is a Carnegie Very High Research Activity University, and the Informatics Research Group is highly experienced in the areas of machine learning and hybrid intelligent systems.} Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
