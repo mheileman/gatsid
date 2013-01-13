@@ -1,13 +1,13 @@
 \documentclass{sbir}
 
-\usepackage{fixme}
-\fxsetup{
-    status=draft,
-    author=,
-    layout=margin,
-    theme=color,
-    targetlayout=color
-}
+%\usepackage{fixme}
+%\fxsetup{
+%    status=draft,
+%    author=,
+%    layout=margin,
+%    theme=color,
+%    targetlayout=color
+%}
 
 %%%%%%%%%% Proposal-specific Information %%%%%%%%%%%%%%%
 \company{Modus Operandi}
@@ -19,8 +19,8 @@
 
 \begin{document}
 
-\listoffixmes
-\newpage
+%\listoffixmes
+%\newpage
  
 %%%%%  Roman numerals for TOC  %%%%%
 \pagenumbering{roman}
@@ -81,7 +81,9 @@ However, there are numerous difficulties with this approach that must be account
 
 \paragraph{The Solution Objective.} The Modus Operandi Team, composed of Modus Operandi, Inc. (MO) and AHS Engineering Services (AHS), proposes to design, prototype, and develop the Geographically-aware Assured Information Dissemination (GeoAID) system for addressing the GATSID problem. The GeoAID system will be built on top of a highly flexible usage management framework that was designed to address situations very similar to GATSID, and was built with the notion of operating in Internet-scale environments involving highly complex usage policies.
 
-\paragraph{Our Approach.} The proposed research addresses the problem described above by logically separating security policies from security implementations within the network. This approach is vital if the true capabilities of GATSID are to be realized in DoD environments. In a DoD setting there will be multiple missions currently interacting with the network infrastructure, and the proposed framework will allow each mission to do so according to the current security policy. Our approach will leverage our work in policy-based usage management. Figure~\ref{conops} provides a high level view of the GeoAID concept of operations. The key elements to note in this figure are the policy-based nature of our approach, the manner in which usage policy is given meaning via an ontology, and the fact that usage policy is always interpreted relative to the current context of the user. More specifically, on the left side of this figure, in Domain A, usage policy is first transformed into a license, using the ontology that has been defined for the particular usage management environment that the system will be operating in. Next, the license is bound to a particular resource, and this bundle is the element that is then made available for usage-managed sharing in other domains.
+\paragraph{Our Approach.} The proposed research addresses the problem described above by logically separating security policies from security implementations within the network. This approach is vital if the true capabilities of GATSID are to be realized in DoD environments. In a DoD setting there will be multiple missions currently interacting with the network infrastructure, and the proposed framework will allow each mission to do so according to the current security policy. Our approach will leverage our work in policy-based usage management. Figure~\ref{conops} provides a high level view of the GeoAID concept of operations. The key element to note in the figure is the manner in which usage management capabilities are deployed throughout the infrastructure---at the distribution network, at nodes within a hierarchal geographically local network~(Network I), and as a part of each node in an ad-hoc geographically local network~(Network II).  A policy decision point~(PDP) is assumed at the headquarters in this figure.  From this point, messages along with bound polices can be created for distribution, e.g.,  through a banner in the sky (BitS) service.  The usage management subsystems, a capability we have spent numerous years developing and maturing, provide policy enforcement points (PEPs) at critical locations.  For instance at the Distribution Network we have the demonstrated the capability of redacting message content or re-routing based upon dynamically evaluated policies.  The figure also shows two scenarios, one~(red arrows) in which a message flows from the BitS to all nodes in one local network, and then to the nodes in an adjacent local network via a multicast policy-mediated multicast mechanism.  In the second scenario (blue arrows), usage management policies constrain a message to in-theatre nodes.
+
+%The key elements to note in this figure are the policy-based nature of our approach, the manner in which usage policy is given meaning via an ontology, and the fact that usage policy is always interpreted relative to the current context of the user. More specifically, on the left side of this figure, in Domain A, usage policy is first transformed into a license, using the ontology that has been defined for the particular usage management environment that the system will be operating in. Next, the license is bound to a particular resource, and this bundle is the element that is then made available for usage-managed sharing in other domains.
 
 \paragraph{Vision and End-State.} The end state of our Phase I research project will be the production of the GeoAID architecture and initial prototype that demonstrate the feasibility of our approach for success during Phases II and III. Specifically we will demonstrate a means to collect and identify potential receiving nodes by class, location, or other means. The Technology Readiness Level (TRL) will be established at the conclusion of Phase I.
 
@@ -89,10 +91,13 @@ However, there are numerous difficulties with this approach that must be account
 On the move warfighters require access to relevant, geo-tagged information. This information must be delivered to devices including handheld multi-function computers, either commercially available or militarized, or wearable computational systems incorporating novel user interface schemes.
 
 \begin{figure}
-  \centerline{\includegraphics[width=6in]{./images/conops-gatsid.png}}
+\vspace{-0.2in}
+  \centerline{\includegraphics[width=5in]{./images/conops-gatsid.pdf}}
+    \vspace{-0.1in}
   \caption{The concept of operations for the GeoAID system.}
   \label{conops}
 \end{figure}
+
 
 %\begin{figure}
 %  \centerline{\includegraphics[width=5.5in]{./images/UM-highlevel.pdf}}
@@ -100,12 +105,11 @@ On the move warfighters require access to relevant, geo-tagged information. This
 %  \label{UM-highlevel}
 % \end{figure}
 
-~\\
 \sbircallout{The technical challenges.}{Current systems provide static, one-size-fits-all functionality for operational information delivery. This is unsuitable for today's dynamic operational environments that change rapidly and unexpectedly. Next-generation messaging solutions for the warfighter must incorporate dynamic security, innovative geo-tagged information dissemination, and the ability to adapt to chaotic technical operating environments.}
 
 This kind of information can include textual data, video, audio, or any other kind of required data displayable on a range of devices within any number of applications, and will be  delivered to sender-specified geographic points or areas. Devices are associated with specific geographic locations, and can receive messages that are pushed to them as needed, or statically posted at a specific region or point. The system must support this kind of functionality globally, and maintain high performance under chaotic operational conditions.
 
-\paragraph{Challenge 1: Secure geo-sensitive multicast.} The first challenge with this system is to develop a geographically targeted information multicast service. This service must enable applications to securely send data directed at mobile appliances situated within a specified geographic area, where these mobile devices can either contain specific global positioning componentry or be geo-tethered to a geo-sensitive device of some kind. Areas of message distribution may be specified graphically via some type of mapping interface, by predefined identification label, or via geographic coordinates. Geographic coordinates must be defined by a minimum of one point with operating radius, or two or more points to define outer bounds of the affected area.
+\paragraph{Challenge 1: Secure geo-sensitive multicast.} The first challenge with is to develop a geographically targeted information multicast service. This service must enable applications to securely send data directed at mobile appliances situated within a specified geographic area, where these mobile devices can either contain specific global positioning componentry or be geo-tethered to a geo-sensitive device. Areas of message distribution may be specified graphically via some type of mapping interface, by predefined identification label, or via geographic coordinates. Geographic coordinates must be defined by a minimum of one point with operating radius, or two or more points to define outer bounds of the affected area.
 
 \paragraph{Challenge 2: Range-restricted secure broadcast.} The second challenge entails the development and deployment of a range-restricted information dissemination service. This service delivers data securely to eligible mobile appliances within a given range of the information disseminator, where the latter could be a mobile wireless appliance or a fixed workstation with access to the messaging network.
 
@@ -211,9 +215,7 @@ The proposed Phase I effort is scheduled as shown in the Gantt chart in Figure~\
 {This Phase I SBIR will result in the definition of the GeoAID technical approach and a software prototype that demonstrates the key aspects of our approach. These results will be in sufficient detail to show proof-of-concept and demonstrate feasibility for the Phase II project and Phase III commercialization.}
 
 \subsection{Key Aspects and Innovation}
-Modus Operandi is an experienced and highly capable SBIR/STTR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. \hl{The University of New Mexico is a Carnegie Very High Research Activity University, and the Informatics Research Group is highly experienced in the areas of machine learning and hybrid intelligent systems.} Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
-
-\fxfatal{Need to connect AHS to UNM in this paragraph.}
+Modus Operandi is an experienced and highly capable SBIR/STTR contractor with a proven record of thorough research and innovation, directed toward solving real problems. MO has been active for over a decade in researching the key technologies required in this effort. AHS Engineering Services has 15 years of experience in research and development activities, and its members have faculty affiliations with the University of New Mexico and the Informatics Research Group, which is highly experienced in the areas of information security and usage management. Our approach integrates proven existing technologies with new innovative approaches. The use and leverage of proven technology provides a sound foundation for our technical approach, reducing technical risk, and providing a platform for our key innovations.
 
 \subsection{Task Summary and Schedule}
 The proposed Phase I effort is organized into the tasks shown in the Figure~\ref{Gantt}. Work will be performed at MO's headquarters in Melbourne, Florida and at AHS facilities in Albuquerque, New Mexico.
@@ -422,7 +424,6 @@ Within these overall market segments, relevant niche markets for Modus Operandi 
 \sbirsection{Key Personnel}{Modus Operandi prides itself on teaming superbly qualified personnel for all of our projects. }
 All key personnel are United States citizens. We propose Dr. Mark Heileman and Dr. Gregory Heileman as Phase I Co-Principal Investigators. Dr. Mark Heileman's biography and r\'esum\'e are below. Dr. Gregory Heileman's biography and r\'esum\'e are in Section~\ref{subs}.
 \begin{center}
-\vspace{-12pt}
    \fcolorbox{BlueSteel}{Magnum}{
          \begin{minipage}[t]{0.9\textwidth}
              \begin{itemize}[labelindent=2em,leftmargin=1.5em,label=$\checkmark$] 
@@ -434,6 +435,7 @@ All key personnel are United States citizens. We propose Dr. Mark Heileman and D
       }
 \end{center}
 
+\vspace{-6pt}
 \subsection{Modus Operandi Key Personnel Biography}\label{MDH}
 {\bfseries Co-Principal Investigator. Dr. Mark Heileman} is a Senior Scientist at Modus Operandi. Dr. Heileman's over thirty-year career includes engineering and executive positions with Elisar Software Corporation, i2 Technologies, United Space Alliance, Rockwell International, and Harris Corporation. His mission is to focus on the client's challenges and employ a consultative, systems engineering approach to solve complex business needs. Dr. Heileman is a graduate of the University of Central Florida where he earned a Ph.D. in Industrial Engineering and Management Systems. He is a registered professional engineer in Florida.
 
@@ -454,7 +456,7 @@ All key personnel are United States citizens. We propose Dr. Mark Heileman and D
   \item Simulation and modeling	
  \end{itemize}
 \end{multicols}
-\vspace{-12pt}
+\vspace{-16pt}
 \textbf{\textsc{Selected Publications:}}
 \vspace{-8pt}
 \begin{enumerate}
@@ -465,13 +467,15 @@ Hull, R., K. Bimson, M. Heileman, R. Hyle, and R. Thiebauth. Semantic Service-Or
 \item Goldstein, H., G. Heileman, M. Heileman, et al. Protecting Digital Archives at the Greek Orthodox Archdiocese of America. Prepared for DRM'03, Washington, DC, 27 October 2003.
 \item Linton, D., S. Khajenoori, M. Heileman, J. Bullington, H. Cat, K. Halder, G. Hebert, and S. Sinnappan. ``Reporter Object: An Analysis Module Which Aids in Verifying, Validating and Graphically Displaying Results of Simulation Models,'' Simulation, Vol. 62, No. 5, May 1994, pp. 313--328.
 \item Heileman, M., D. Linton, and S. Khajenoori. ``Simulation Study Aids Space Shuttle Flight Rate Planning,'' Industrial Engineering, Vol. 24, No. 3, March 1992, pp. 58--59.
-
 \end{enumerate}
+
+\vspace{-6pt}
 \textbf{\textsc{Relevant Experience:}}~\\
 {\bfseries Modus Operandi, Inc., 2004--present. Senior Scientist.} A software company serving the US defense and intelligence community by providing technology to speed information discovery, integration, and fusion. Directs the design and development of innovative information system technologies and their application to government and industry needs.~\\
 {\bfseries Elisar Software Corporation, 2001--2003. Vice President, Sales Engineering.} A venture capital financed start-up software company providing digital rights enforcement products and services. Initiated the Sales Engineering function, which had primary responsibility for driving customer and market requirements into the internal development process.~\\
 {\bfseries i2 Technologies, 1997--2001. Senior Solution Consultant}. A business software and services company providing supply chain management solutions to customers worldwide. Provided technical leadership throughout software products sales cycles.
 
+\vspace{-6pt}
 \textbf{\textsc{Education:}}
 \vspace{-30pt}
 \begin{tabbing}*****************\=\kill
@@ -481,6 +485,7 @@ Hull, R., K. Bimson, M. Heileman, R. Hyle, and R. Thiebauth. Semantic Service-Or
  \> {\bfseries B.S.}, Industrial and Systems Engineering, University of Florida (1980).
 \end{tabbing}
 
+\vspace{-12pt}
 \textbf{\textsc{Affiliations:}}
 \vspace{-30pt}
 \begin{tabbing}*****************\=\kill
@@ -489,6 +494,7 @@ Hull, R., K. Bimson, M. Heileman, R. Hyle, and R. Thiebauth. Semantic Service-Or
 \> Member, International Council on Systems Engineering (INCOSE). \\
 \> Security Clearance: DoD Top Secret/SCI/SI/TK/G/HCS.
 \end{tabbing}
+\vspace{-12pt}
 
 \sbirsection{Foreign Citizens}{}
 We do not expect to involve any foreign citizens on this project.
@@ -502,6 +508,7 @@ All instrumentation and physical facilities required to carry out the Phase I ef
 
 {\bf Co-Principal Investigator. Dr. Gregory Heileman } is the Associate Provost for Curriculum and a Professor in the Department of Electrical and Computer Engineering at the University of New Mexico, with over 20 years of experience as a research scientist, and over 100 peer-reviewed journal articles and conference papers. At the University of New Mexico he teaches courses in the areas of algorithms and data structures, software design, theory of computing, learning theory, and information theory. His research interests are in the areas of information security and multimedia systems, the theory of computing and information, and machine learning. He currently serves on the Editorial Board for the International Journal of Multimedia Intelligence and Security. He is the author of the textbook Data Structures, Algorithms, and Object-Oriented Programming published by McGraw-Hill in 1996. During 1998 he held a research fellowship at the Universidad Carlos III de Madrid, and in 2005 he held a similar position at the Universidad Polit\'enica de Madrid. Dr. Heileman is a senior member of the IEEE. He holds a PhD in Computer Engineering from the University of Central Florida.
 
+\vspace{-8pt}
 {\bf Senior Scientist. Dr. Christopher Lamb} will act as the primary Systems Architect during the course of all phases of the project. Dr. Lamb currently serves as an Enterprise Architect, with concentration on Systems and Security, with Sandia National Laboratories. He is also a research professor affiliated with the Electrical and Computer Engineering department at the University of New Mexico. He has extensive experience designing and developing mission-critical distributed systems for a wide range of government departments and agencies. Prior to joining Sandia National Laboratories, Dr. Lamb served in executive roles and as a principal consultant for a variety of technology companies in the southwest. Dr. Lamb has a B.S. in Mechanical Engineering from New Mexico State University, an M.S. in Computer Science from the University of New Mexico, as well as a Ph.D. in Computer Engineering with a focus on Computational Intelligence from the University of New Mexico. He is a The Open Group Architecture Framework (TOGAF) 9 Certified Enterprise Architect and a Certified Information Systems Security Professional (CISSP) through the International Information Systems Security Certification Consortium.
 
 \subsection{Co-Principal Investigator R\'esum\'e}\label{GLH}
@@ -521,26 +528,26 @@ All instrumentation and physical facilities required to carry out the Phase I ef
   \item Theory of Computing and Information	
  \end{itemize}
 \end{multicols}
-\vspace{-12pt}
+
+\vspace{-16pt}
 \textbf{\textsc{Selected Publications:}}
 \vspace{-8pt}
 \begin{enumerate}
-\item C. Vineyard, S.J. Verzi and G.L. Heileman. Neurocomputation by a Neural Chip-Firing Game. Proceedings of the 2012 IEEE World Congress on Computational Intelligence, Brisbane, Australia, June 10--15, 2012.
-\item C. Vineyard, G.L. Heileman, S.J. Verzi and R. Jordan. Game-theoretic Mechanism Design Applied to Machine Learning Classification, Third International Workshop on Cognitive Information Processing, Baiona, Spain, May 28--30, 2012.
 \item C. C. Lamb, P. A. Jamkhedkar, G. L. Heileman and C. T. Abdallah. Managed Control of Composite Cloud Systems. 6th IEEE International Conference on System of Systems Engineering (SoSE), Albuquerque, NM, pp. 167--172, June 27--30, 2011.
 \item M. Martinez-Ramon, V. Koltchinskii, G.L. Heileman, and S. Posse. Classification of Multiple Interleaved Human Brain Tasks in functional Magnetic Resonance Imaging, in G. Camps-Valls, J. L. Rojo-Alvarez, M. Martinez-Ramon, editors, Kernel methods in Bioengineering, Communications and Image Processing, Idea Group, 2006.
 \item S. al-Saffar and G. L. Heileman. Computing Information Value from RDF Graph Properties. Proceedings of the 12th International Conference on Information Integration and Web-based Applications \& Services, Paris, Nov. 8--10, 2010.
 \item T.-T. Quach F. Perez-Gonzalez, and G. L. Heileman. Model-Based Steganalysis Using Invariant Features. IS\&T/SPIE Electronic Imaging Science and Technology: Media Forensics and Security XI (Conference EI120), San Jose, CA, Jan. 18--22, 2009.
 \item S. al-Saffar and G. L. Heileman. Semantic Impact Graphs for Information Valuation. Proceeding of the Eighth ACM Symposium on Document Engineering, Sao Paulo, Brazil, pp. 209--212, Sept. 16--19, 2008.
 \item S. al-Saffar and G. L. Heileman. Semantics-Based Information Valuation. Proceedings of the 4-th IEEE International Conference on Intelligent Systems IS'08, Varna, Bulgaria, Vol. 1, pp. 6-51--6-58, Sept. 6--8, 2008.
-\item M. Martinez-Ramon, V. Koltchinskii, G.L. Heileman, and S. Posse. fMRI pattern classification using neuroanatomically constrained boosting. Neuroimage, 31(3):1129--1141, July 2006.
-\item S. J. Verzi, G.L. Heileman, and M. Georgiopoulos. Boosted {ARTMAP}: Modifications to fuzzy ARTMAP motivated by boosting theory. Neural Networks, 19(2):446--468, 2006.
 \end{enumerate}
+
+\vspace{-6pt}
 \textbf{\textsc{Relevant Experience:}}~\\
 {\bfseries AHS Engineering Services, 1997--present. Principal.} A consulting firm offering expert engineering services in areas including software engineering and information security.~\\
 {\bfseries University of New Mexico, Department of Electrical \& Computer Engineering, 1990--present. Professor, Associate Provost for Curriculum (current position)}.~\\
 {\bfseries Elisar Software Corporation, 2000--2003. Chief Executive Officer and Chairman of the Board.} A venture capital financed start-up software company providing digital rights enforcement products and services.
 
+\vspace{-6pt}
 \textbf{\textsc{Education:}}
 \vspace{-30pt}
 \begin{tabbing}*****************\=\kill
@@ -549,6 +556,7 @@ All instrumentation and physical facilities required to carry out the Phase I ef
  \> {\bfseries B.A.}, Biology, Wake Forest University (1982).
 \end{tabbing}
 
+\vspace{-12pt}
 \textbf{\textsc{Affiliations:}}
 \vspace{-30pt}
 \begin{tabbing}*****************\=\kill
@@ -556,6 +564,7 @@ All instrumentation and physical facilities required to carry out the Phase I ef
 \> Senior Member, IEEE. \\
 \> Security Clearance: DoD Secret.
 \end{tabbing}
+\vspace{-12pt}
 
 \sbirsection{Prior, Current, or Pending Support of Similar Proposals or Awards}{}
 No prior, current, or pending support for the proposed work.
